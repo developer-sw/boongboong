@@ -1,0 +1,160 @@
+/* =========================
+   Terms 팔레트 & 기본값 (Scoped)
+   ========================= */
+.terms {
+  --color-bg: #ffffff;
+  --color-dark: #222222;
+  --color-main: #fedf59;
+  --text: #222222;
+  --muted: #8f8f8f;
+  --card-alt: #919191b6; /* 회색 카드(모두 동의) */
+  --line: #e5e5e5;
+  --primary: #222222; /* 버튼 활성 배경 */
+  --disabled: #d5d5d5; /* 버튼 비활성 배경 */
+  --radius: 12px;
+  --radius-pill: 9999px;
+  --gap: 2px;
+  --shadow-soft: 0 8px 24px rgba(0,0,0,0.08);
+  --font: "Pretendard", system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans KR", sans-serif;
+}
+
+/* =========================
+   레이아웃
+   ========================= */
+.terms {
+  min-height: 100dvh;
+  background: var(--color-bg);
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font);
+  overflow-x: hidden;
+}
+
+/* 상단 히어로(제목) */
+.terms .hero {
+  max-width: 420px;
+  margin: 28px auto 24px;
+  padding: 0 20px;
+}
+.terms .hero h1 {
+  margin: 80px 0 0 -70px;
+  font-size: 24px;
+  line-height: 1.35;
+  font-weight: 900;
+  letter-spacing: -1.2px;
+}
+
+/* 카드 영역 */
+.terms .terms-card {
+  max-width: 450px;
+  width: 90%;
+  margin: 290px 0 0 0;
+  padding: 0 16px 0px;
+}
+
+/* 공통 행 */
+.terms .row {
+  display: flex;
+  align-items: center;
+  gap: var(--gap);
+  padding: 10px;
+  position: relative;
+}
+.terms .row + .row { margin-top: 0px; }
+
+/* "모두 동의" 행 (회색 카드) */
+.terms .row.all {
+  background: var(--card-alt);
+  font-weight: 700;
+  border-radius: 16px;
+  padding: 14px 16px;
+}
+
+/* 체크박스: 원형 + 체크 표시 */
+.terms input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: none;
+  background: #e4e4e4;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex: none;
+}
+.terms input[type="checkbox"]::after {
+  content: "";
+}
+.terms input[type="checkbox"]:checked {
+  background: #cfcfcf;
+}
+.terms input[type="checkbox"]:checked::after {
+  content: "✔";
+  color: #fff;
+  font-size: 13px;
+  line-height: 1;
+}
+
+/* 라벨 텍스트 */
+.terms .row span {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+/* 오른쪽 '>' 링크 버튼 */
+.terms .link {
+  margin-left: auto;
+  background: transparent;
+  border: 0;
+  font-size: 18px;
+  color: var(--muted);
+  padding: 6px 2px;
+  cursor: pointer;
+}
+.terms .link:focus-visible {
+  outline: 2px solid #999;
+  border-radius: 6px;
+}
+
+/* 구분선 */
+.terms hr {
+  border: 0;
+  height: 1px;
+  background: var(--line);
+  margin: 12px 0;
+}
+
+/* 하단 동의 버튼 */
+.terms .btn {
+  width: 100%;
+  padding: 16px;
+  border-radius: var(--radius);
+  border: none;
+  font-weight: 700;
+  font-size: 16px;
+  margin-top: 16px;
+}
+.terms .btn-primary:disabled {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--disabled);
+  color: #fff;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+.terms .btn-primary:not(:disabled) {
+  background: var(--primary);
+  color: #fff;
+}
+
+/* 태블릿 이상 미세 조정 */
+@media (min-width: 768px) {
+  .terms .hero { max-width: 480px; margin-top: 36px; }
+  .terms .terms-card { max-width: 480px; padding-bottom: 120px; }
+  .terms .hero h1 { font-size: 26px; }
+}

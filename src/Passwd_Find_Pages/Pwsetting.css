@@ -1,0 +1,110 @@
+/* Pwsetting 컴포넌트 내에서 사용할 변수 정의 */
+.pwsetting {
+  --bg: #ffffff;
+  --text: #222;
+  --muted: #777;
+  --main: #fedf59; /* 노란색 버튼 색상 */
+  --error: #e64949;
+  --line: #e9e9e9;
+  --radius: 12px;
+  --shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+/* Pwsetting 컴포넌트와 그 하위 요소에만 적용되는 기본 스타일 */
+.pwsetting * {
+  box-sizing: border-box;
+}
+
+/* Pwsetting 컴포넌트의 루트 스타일 */
+.pwsetting {
+  margin: 0;
+  font-family: Inter, Pretendard, system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans KR", sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column; /* [추가] pwfind와 같이 내부 요소를 중앙 정렬합니다. */
+  padding: 24px 18px;
+}
+
+
+/* 페이지 공통 레이아웃 */
+.pwsetting .pw-container {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  padding: 24px 18px;
+}
+
+.pwsetting .back-btn {
+  border: none; background: none; 
+  font-size: 20px;
+  cursor: pointer; 
+  color: #444; 
+  padding: 6px 2px;
+  margin-bottom: 16px; 
+  text-align: left;
+}
+
+.pwsetting .title {
+  margin: 0 0 6px 0; 
+  font-size: 22px; 
+  font-weight: 700;
+}
+
+.pwsetting .subtitle {
+  margin: 0 0 24px 0; 
+  color: var(--muted); 
+  font-size: 13px;
+}
+
+.pwsetting .card {
+  background: var(--card); 
+  border-radius: 16px;
+  padding: 22px;
+  margin-top: -10px;
+  border:none;
+}
+.pwsetting .control {
+  width: 100%; border: 
+  1px solid var(--line); 
+  border-radius: 
+  var(--radius);
+  padding: 13px 14px; 
+  font-size: 15px; outline: none; 
+  background: #fff;
+}
+
+.pwsetting .btn.primary.submit {
+  width: 100%; 
+  margin-top: 10px; 
+  background: var(--main); 
+  color: var(--text);
+  border: none; 
+  border-radius: var(--radius); 
+  padding: 14px 16px;
+  font-size: 16px; 
+  font-weight: 700; 
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Pwsetting 페이지 전용 스타일 */
+.pwsetting .form-group {
+  margin-bottom: 18px;
+}
+.pwsetting .form-group:last-of-type {
+  margin-bottom: 0;
+}
+.pwsetting .label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.pwsetting .error-text {
+  color: var(--error);
+  font-size: 13px;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: -4px;
+}

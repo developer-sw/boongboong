@@ -1,0 +1,327 @@
+/* =========================
+   SchoolSignup 팔레트 & 기본값 (Scoped)
+   ========================= */
+
+/* .schoolsignup 클래스 내에서 사용할 색상, 폰트, 간격 등 디자인 시스템 변수를 정의합니다. */
+.schoolsignup {
+  --color-bg: #ffffff;
+  --color-dark: #222222;
+  --color-main: #fedf59;
+  --color-sub: #ff6b6b;
+  --text: #222222;
+  --text-light: #8d8d8d;
+  --muted: #8f8f8f;
+  --disabled: #e9e9e9;
+  --line: #e5e5e5;
+  --radius: 12px;
+  --font: "Pretendard", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Noto Sans KR", sans-serif;
+}
+
+/* =========================
+   레이아웃
+   ========================= */
+
+/* 회원가입 페이지 전체를 감싸는 최상위 컨테이너의 레이아웃을 설정합니다. */
+.schoolsignup {
+  min-height: 100dvh;
+  background: var(--color-bg);
+  color: var(--text);
+  font-family: var(--font);
+  padding: 24px 20px 40px;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+/* 페이지 내부 콘텐츠를 중앙에 정렬시키고 최대 너비를 제한하는 래퍼입니다. */
+.schoolsignup .card-wrapper {
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+/* '뒤로가기' 아이콘 버튼의 스타일을 지정합니다. */
+.schoolsignup .icon-back {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: 22px;
+  margin-left: -12px;
+  color: var(--text);
+}
+
+/* 페이지의 주 제목 스타일을 정의합니다. */
+.schoolsignup .title {
+  font-size: 24px;
+  line-height: 1.35;
+  font-weight: 900;
+  letter-spacing: -1.2px;
+  margin: 0 -3px 3px;
+}
+
+/* 페이지의 부제목 스타일을 정의합니다. */
+.schoolsignup .subtitle {
+  font-size: 11px;
+  color: var(--text-light);
+  margin: 0 0 32px;
+}
+
+/* 폼 요소 전체를 감싸는 카드 형태의 컨테이너입니다. */
+.schoolsignup .card {
+  background: transparent;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* '레이블 + 입력 필드' 한 세트를 그룹화하는 컨테이너입니다. */
+.schoolsignup .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* =========================
+   폼 요소
+   ========================= */
+
+/* 레이블과 에러 메시지를 한 줄의 양 끝에 배치하기 위한 컨테이너입니다. */
+.schoolsignup .label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: -5px 0 0 0;
+}
+
+/* 폼 요소의 제목 역할을 하는 레이블의 스타일입니다. */
+.schoolsignup .label {
+  display: block;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.schoolsignup .label-help-error{
+  color:var(--color-sub);
+}
+/* 유효성 검사 실패 시 나타나는 에러 메시지의 스타일입니다. */
+.schoolsignup .error-msg {
+  font-size: 12px;
+  color: var(--color-sub);
+  font-weight: 500;
+}
+.error {
+  color: red;
+  font-size: 12px;
+}
+
+/* input, select 등 모든 입력 컨트롤 요소의 공통 스타일을 정의합니다. */
+.schoolsignup .control {
+  width: 100%;
+  height: 52px;
+  padding: 0 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #ffffff;
+  font-size: 16px;
+  font-family: var(--font);
+  box-sizing: border-box;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+/* 입력 필드 내부에 표시되는 placeholder 텍스트의 스타일입니다. */
+.schoolsignup .control::placeholder {
+  color: var(--muted);
+}
+
+/* 입력 필드가 포커스(활성화)되었을 때의 스타일입니다. */
+.schoolsignup .control:focus {
+  outline: none;
+  background: #fff;
+  border-color: var(--color-dark);
+  box-shadow: 0 0 0 3px rgba(34, 34, 34, 0.1);
+}
+
+/* 입력값이 유효하지 않을 때(.invalid 클래스 추가 시)의 테두리 스타일입니다. */
+.schoolsignup .control.invalid {
+  border-color: var(--color-sub);
+}
+
+/* 유효하지 않은 입력 필드가 포커스되었을 때의 외부 그림자 스타일입니다. */
+.schoolsignup .control.invalid:focus {
+  box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.15);
+}
+
+/* 입력 필드와 버튼 등을 가로로 나란히 배치할 때 사용하는 컨테이너입니다. */
+.schoolsignup .input-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+/* .input-row 내부의 입력 필드가 남는 공간을 모두 차지하도록 합니다. */
+.schoolsignup .input-row .control {
+  flex: 1;
+}
+
+/* 입력 필드 오른쪽에 고정된 텍스트(접미사)가 함께 있는 UI의 컨테이너입니다. */
+.schoolsignup .input-with-suffix {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  border: none;
+  background: none;
+  padding: 0;
+}
+
+/* .input-with-suffix 내부의 입력 필드 스타일입니다. */
+.schoolsignup .input-with-suffix .control {
+  flex: 1;
+  min-width: 35px;
+}
+
+/* 입력 필드 옆에 붙는 '@inu.ac.kr'과 같은 접미사 텍스트의 스타일입니다. */
+.schoolsignup .suffix {
+  color: var(--muted);
+  margin: 0 12px 0 4px;
+  white-space: nowrap;
+  font-size: 12px;
+}
+
+/* 인증 코드 입력란처럼 요소들이 세로로 배치되어야 할 때 사용합니다. */
+.schoolsignup .input-row.is-code {
+  flex-direction: column;
+  align-items: stretch;
+}
+
+/* --- ✅ 타이머 스타일 수정 시작 --- */
+
+/* [수정] 인증 코드 입력 필드를 감싸는 래퍼. 타이머 위치의 기준점이 됩니다. */
+.schoolsignup .code-input-wrap {
+  position: relative;
+  width: 100%;
+}
+
+/* [수정] JSX의 'code-timer' 클래스에 맞게 타이머 텍스트 스타일을 지정합니다. */
+.schoolsignup .code-timer {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-sub);
+  font-weight: 500;
+  font-size: 15px;
+  pointer-events: none;
+}
+
+/* [수정] 타이머가 텍스트를 가리지 않도록 .code-input-wrap 내부의 입력 필드에 오른쪽 패딩을 추가합니다. */
+.schoolsignup .code-input-wrap .control {
+  padding-right: 75px;
+}
+
+/* --- ✅ 타이머 스타일 수정 끝 --- */
+
+
+/* 이름/나이 입력란처럼 2단으로 나뉘는 그리드 레이아웃을 정의합니다. */
+.schoolsignup .grid-2 {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+}
+
+/* 그리드의 마지막 열(주로 나이)의 너비를 고정합니다. */
+.schoolsignup .grid-2 > div:last-child {
+  width: 120px;
+}
+
+/* select 요소를 감싸는 래퍼로, 커스텀 화살표를 위해 사용됩니다. */
+.schoolsignup .select-wrap {
+  position: relative;
+}
+
+/* select 요소의 기본 화살표를 숨기고 커스텀 아이콘을 위한 공간을 확보합니다. */
+.schoolsignup .select-wrap .control {
+  appearance: none;
+  -webkit-appearance: none;
+  padding-right: 32px;
+}
+
+/* select 박스 오른쪽에 표시될 커스텀 아래 화살표 아이콘입니다. */
+.schoolsignup .chevron {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: var(--muted);
+}
+
+/* =========================
+   버튼
+   ========================= */
+
+/* [수정] 모든 버튼의 기본 스타일을 검은색 배경, 흰색 글씨로 변경합니다. */
+.schoolsignup .btn {
+  height: 52px;
+  padding: 0 16px;
+  border-radius: var(--radius);
+  border: none;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  background: var(--color-dark);
+  color: #ffffff;
+  transition: opacity 0.2s;
+  white-space: nowrap;
+}
+
+/* [추가] 비활성화되지 않은 버튼에 마우스를 올리면 살짝 투명해집니다. */
+.schoolsignup .btn:hover:not(:disabled) {
+  opacity: 0.85;
+}
+
+/* 비활성화된 상태의 버튼 스타일입니다. */
+.schoolsignup .btn:disabled {
+  background: var(--disabled) !important;
+  color: #aaa;
+  cursor: not-allowed;
+}
+
+/* '가입하기' 등 최종 제출 버튼의 스타일입니다. (크기 및 여백 조정) */
+.schoolsignup .btn.submit {
+  margin-top: 24px;
+  height: 56px;
+  font-size: 17px;
+}
+
+.schoolsignup .btn.primary {
+  background-color: #fedf59; /* 노란색 배경 */
+  color: #222; /* 가독성을 위한 어두운 글자색 */
+}
+
+/* =========================
+   반응형 (태블릿 이상)
+   ========================= */
+
+/* 화면 너비가 768px 이상일 때 적용되는 반응형 스타일입니다. */
+@media (min-width: 768px) {
+  /* 데스크탑 환경에서는 폼을 화면 중앙에 배치합니다. */
+  .schoolsignup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+  }
+  /* 데스크탑 환경에서 뒤로가기 버튼을 좌측 상단에 고정시킵니다. */
+  .schoolsignup .icon-back {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    width: auto;
+  }
+}
+

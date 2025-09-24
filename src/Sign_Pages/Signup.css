@@ -1,0 +1,175 @@
+/* Signup 컴포넌트 내에서 사용할 변수 정의 */
+.signup {
+  --bg: #ffffff;
+  --text: #222;
+  --muted: #777;
+  --main: #fedf59;
+  --error: #e64949;
+  --line: #e9e9e9;
+  --radius: 12px;
+  --gap: 14px;
+  --shadow: 0 8px 24px rgba(0,0,0,.06);
+}
+
+/* Signup 컴포넌트와 그 하위 요소에만 적용되는 기본 스타일 */
+.signup * {
+  box-sizing: border-box;
+}
+
+.signup {
+  margin: 0;
+  font-family: Inter, Pretendard, system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans KR", sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px 18px;
+}
+
+.signup .login-header {
+  width: min(520px, 100%);
+  margin: 0 auto 16px;
+}
+
+.signup .back-btn {
+  border: none;
+  background: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #444;
+  padding: 6px 2px;
+  margin-bottom: 16px; /* 제목과의 간격 */
+  text-align: left; /* 왼쪽 정렬 */
+}
+
+.signup .title {
+  margin: 0 0 6px 0;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.signup .subtitle {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.signup .login-card {
+  width: min(520px, 100%);
+  background:white;
+  padding: 22px;
+  border:none;
+}
+
+.signup .form-group + .form-group {
+  margin-top: 18px;
+}
+
+.signup .label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.signup .label {
+  font-weight: 600;
+}
+
+.signup .error-msg {
+  color: var(--error);
+  font-size: 12px;
+}
+
+/* 이메일: 아이디 + 접미사 */
+.signup .input-with-suffix {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* 아이디 입력칸과 도메인 텍스트 사이 간격 */
+  border:none;
+}
+
+.signup .input-with-suffix input {
+  width: 120px; /* 아이디 입력칸 너비 고정 */
+  border: 2px solid var(--line);
+  border-radius: 10px;
+  padding: 12px 12px;
+  background: #ffffff;
+  outline: none;
+  font-size: 15px;
+  text-align: center;
+}
+
+.signup .input-with-suffix .suffix {
+  font-size: 14px;
+  color: var(--text);
+  white-space: nowrap;
+}
+
+/* 비밀번호 */
+.signup .password-field {
+  width: 100%;
+}
+
+.signup .password-field input {
+  width: 100%;
+  border: 2px solid var(--line);
+  border-radius: 12px;
+  padding: 12px 14px;
+  background: #fff;
+  font-size: 15px;
+  outline: none;
+}
+
+.signup .input-with-suffix.invalid input,
+.signup .password-field.invalid input {
+  border-color: var(--error);
+}
+
+
+/* 하단 링크 버튼 */
+.signup .link-btn {
+  margin-top: 8px;
+  background: none;
+  border: none;
+  color: #666;
+  text-decoration: none; /* 밑줄 제거 */
+  cursor: pointer;
+  padding: 0;
+  font-size: 13px;
+}
+
+/* CTA */
+.signup .btn-primary {
+  width: 100%;
+  margin-top: 22px;
+  background: var(--main);
+  border: none;
+  border-radius: 12px;
+  padding: 14px 16px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  color: var(--text); /* 글자색을 어둡게 변경 */
+  box-shadow: 0 4px 10px rgba(0,0,0,.05);
+}
+
+.signup .btn-primary:disabled {
+  background: #e7e7e7;
+  color: #aaa;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* 반응형 여백/크기 조절 */
+@media (min-width: 768px) {
+  .signup {
+    padding: 40px 24px;
+  }
+  .signup .title {
+    font-size: 24px;
+  }
+}
+

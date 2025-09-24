@@ -1,0 +1,65 @@
+:root {
+  --color-dark: #222222;
+  --color-main: #FEDF59;
+  --spacing: 20px;
+  --font: "Pretendard", system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans KR", sans-serif;
+}
+
+/* 전체 화면 채우는 스플래시 */
+.splash {
+  min-height: 100svh; /* iOS 등 모바일 주소창 높이 대응 */
+  background: var(--color-main);
+  color: var(--color-dark);
+  font-family: var(--font);
+  box-sizing: border-box;       
+  overflow: hidden; 
+
+  /* 가운데 정렬 + 하단 쪽 배치 */
+  display: grid;
+  place-items:center;
+
+  /* 반응형 안전 여백 */
+  padding: clamp(16px, 2.5vw, 32px);
+  padding-bottom: calc(clamp(8vh, 12vh, 16vh) + env(safe-area-inset-bottom, 0px));
+}
+
+/* 내부 컨테이너: 최대 폭 제한 & 가로 중앙 */
+.safe {
+  width: min(1200px, 100%);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+/* 로고: 크기는 JSX에서 react-responsive로 제어 */
+.brand-svg {
+  display: block;
+  height: auto;
+
+  /* 부드러운 효과 */
+  transform: translateY(0);
+  transition: transform 300ms ease, filter 300ms ease;
+  filter: drop-shadow(0 6px 14px rgba(0,0,0,0.08));
+  animation: floatUpDown 3.2s ease-in-out infinite;
+}
+
+/* 살짝 떠오르는 느낌의 애니메이션 */
+@keyframes floatUpDown {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
+}
+
+/* 접근성: 모션 선호 안 하면 애니메이션 제거 */
+@media (prefers-reduced-motion: reduce) {
+  .brand-svg {
+    animation: none;
+  }
+}
+
+/* 다크 모드 대응 */
+@media (prefers-color-scheme: dark) {
+  .splash {
+    background: #f7d94d;
+  }
+}
