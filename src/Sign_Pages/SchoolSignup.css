@@ -112,7 +112,7 @@
   color: var(--color-sub);
   font-weight: 500;
 }
-.error {
+.msg-error {
   color: red;
   font-size: 12px;
 }
@@ -324,4 +324,3 @@
     width: auto;
   }
 }
-

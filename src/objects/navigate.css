@@ -1,0 +1,66 @@
+/* 기본 레이아웃: 화면 하단 고정, 반투명 배경 등
+*/
+.bb-bottomnav {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 50;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  background: rgba(255, 255, 255, 0.95);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* 가운데 정렬용 래퍼 */
+.bb-bottomnav__inner {
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+/* 4개의 아이템을 균등하게 배치하는 그리드 */
+.bb-bottomnav__grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  width: 100%;
+}
+
+/* --- 각 내비게이션 아이템 스타일 --- */
+.bb-bottomnav__item > a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 10px 0;
+  text-decoration: none;
+}
+
+/* ✅ 비활성(기본) 상태의 아이콘과 글자 스타일
+*/
+.bb-icon {
+  width: 24px;
+  height: 24px;
+  fill: #6b7280; /* 아이콘 색상 (회색) */
+}
+
+.bb-label {
+  font-size: 12px;
+  line-height: 1;
+  color: #6b7280; /* 글자 색상 (회색) */
+}
+
+/* ✅ 활성 상태('.is-active')일 때의 아이콘과 글자 스타일 
+*/
+.bb-bottomnav__item > a.is-active .bb-icon {
+  fill: #000000; /* 활성 아이콘 색상 (진한 검정) */
+}
+
+.bb-bottomnav__item > a.is-active .bb-label {
+  color: #000000; /* 활성 글자 색상 (진한 검정) */
+  font-weight: 600; /* 글자 살짝 굵게 */
+}

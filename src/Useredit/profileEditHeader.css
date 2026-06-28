@@ -1,0 +1,50 @@
+/* 상단 헤더 전체 (393 x 64) */
+.profile-edit-header {
+  width: 393px;
+  height: 64px;
+  background-color: #ffffff;
+  box-sizing: border-box;
+  border-bottom: 1px solid #e5e7eb;
+
+  display: flex;
+  align-items: center;
+  position: relative; /* 제목 가운데 배치를 위해 */
+  padding: 0 20px;
+}
+
+/* 왼쪽: 뒤로가기 버튼 */
+.profile-edit-header-back {
+  width: 14px;
+  height: 28px;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.profile-edit-header-back-icon {
+  width: 14px;
+  height: 28px;
+  display: block;
+}
+
+/* 가운데 제목 "프로필 수정" */
+.profile-edit-header-title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 700;
+  color: #111827;
+}
+
+/* ✅ 기존 .profile-edit-header-inner, .profile-edit-header-left,
+   .profile-edit-header-done 관련 스타일은 더 이상 사용 안 해도 됨 */

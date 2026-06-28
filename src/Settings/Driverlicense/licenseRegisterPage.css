@@ -1,0 +1,204 @@
+/* 운전면허증 등록 전체 페이지 – 흰 배경 + 세로 스크롤 */
+.license-page {
+  width: 393px;
+  height: 100vh;           /* min-height 대신 height로 고정 */
+  margin: 0 auto;
+  box-sizing: border-box;
+
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+
+  /* 이 컨테이너 안에서만 세로 스크롤 */
+  overflow-y: auto;
+
+  /* 스크롤바는 숨기기 */
+  -ms-overflow-style: none;  /* IE / Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+.license-page::-webkit-scrollbar {
+  display: none;             /* Chrome / Safari */
+}
+
+/* 본문 영역 – 섹션들 쌓을 자리 */
+/* 본문 영역 – 섹션들 쌓을 자리 */
+.license-main {
+  flex: 1;
+  width: 100%;
+  box-sizing: border-box;
+
+  /* ⬇ 기존 16px에서 24px로 조금 더 띄움 */
+  padding: 24px 20px 24px;
+
+  background-color: #ffffff;
+}
+
+/* =========================
+   안전한 카풀을 위한 필수인증 박스
+   ========================= */
+
+.license-info-card {
+  width: 100%;
+  min-height: 90px;
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center; /* 세로 중앙 정렬 */
+  gap: 10px;           /* 아이콘을 텍스트 쪽으로 적당히 */
+
+  padding: 14px 16px;
+  border-radius: 12px;
+  background-color: #e7f1ff;
+  border: 1px solid #1517b8;
+}
+
+/* 동그란 i 아이콘 */
+.license-info-icon {
+  width: 18px;
+  height: 18px;
+  border-radius: 9999px;
+  border: 2px solid #7879f1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e7f1ff;
+
+  margin-top: -24px; /* 약간 아래로 내린 효과 */
+}
+
+.license-info-icon-text {
+  font-size: 12px;
+  font-weight: 600;
+  color: #7879f1;
+  line-height: 0;
+}
+
+/* 텍스트 영역 */
+.license-info-texts {
+  flex: 1;
+}
+
+/* 제목: 진한 파란색 */
+.license-info-title {
+  margin: 3px 0 2px;
+  font-size: 11px;
+  font-weight: 530;
+  color: #1517b8;
+}
+
+/* 설명: 연한 파란색 */
+.license-info-desc {
+  margin: 0;
+  font-size: 11px;
+  font-weight: 400;
+  color: #7879f1;
+  line-height: 1.5;
+}
+
+/* =========================
+   주의사항 박스 (디자인안 버전)
+   ========================= */
+
+/* =========================
+   주의사항 박스 (디자인안 버전)
+   ========================= */
+
+/* 주의사항 박스 – 위 간격 조금 줄이고, 아래에 약간만 여유 */
+.license-warning {
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 38px;      /* 24px → 20px */
+  margin-bottom: 8px;    /* 🔥 새로 추가: 아래 간격 최소화 */
+
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+
+  padding: 16px 18px;
+  border-radius: 20px;
+  background-color: #fff9e8;
+  border: 1px solid #b7853a;
+}
+
+
+/* =========================
+   주의사항 삼각형 아이콘
+   ========================= */
+
+/* 삼각형 래퍼 */
+.license-warning-icon {
+  position: relative;
+  width: 26px;   /* 아이콘 전체 크기 */
+  height: 24px;
+  margin-top: -3px;  /* 살짝만 위로 붙이기 */
+}
+
+/* 바깥 삼각형(외곽 테두리 역할) */
+.license-warning-icon::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+
+  width: 0;
+  height: 0;
+  border-left: 14px solid transparent;
+  border-right: 14px solid transparent;
+  border-bottom: 24px solid #b7853a;   /* 진한 갈색 외곽 */
+}
+
+/* 안쪽 삼각형(배경색) – 바깥보다 꽤 작게 해서 테두리 두껍게 보이게 */
+.license-warning-icon::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 2.3px;                 /* 바깥 삼각형보다 살짝 위로 */
+  transform: translateX(-50%);
+
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 18px solid #fff9e8;   /* 주의사항 박스 배경색 */
+}
+
+/* 가운데 느낌표 – 항상 맨 위 레이어 + 정확히 중앙 */
+.license-warning-icon-mark {
+  position: absolute;
+  left: 50%;
+  top: 58%;                     /* 살짝 아래로 내려 균형 맞추기 */
+  transform: translate(-50%, -50%);
+  font-size: 15px;
+  font-weight: 700;
+  color: #b7853a;               /* 테두리와 같은 색 */
+  z-index: 1;                   /* 🔥 삼각형(::before, ::after) 위로 */
+}
+
+
+/* 텍스트 영역 */
+.license-warning-texts {
+  flex: 1;
+  color: #7e501f;
+}
+
+.license-warning-title {
+  margin: 0 0 5px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #7e501f;
+}
+
+/* 불릿 리스트 */
+.license-warning-list {
+  margin: 0;
+  padding-left: 10px;      /* 불릿 들여쓰기 */
+  list-style-type: disc;
+}
+
+.license-warning-list li {
+  font-size: 10px;
+  line-height: 1.6;
+  color: #7e501f;
+}

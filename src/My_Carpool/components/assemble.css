@@ -1,0 +1,102 @@
+/* components/history.css */
+
+/* 전체 컨테이너 */
+.history-container {
+  background-color: #FFFFFF;
+  padding: 1.3rem;
+  padding-top: 2rem;
+  margin-top: -1rem;
+  /* 위치 및 레이어 설정 */
+  position: relative; 
+  z-index:10;
+  
+  /* 둥근 모서리 설정 (정상 작동 중) */
+  border-top-left-radius: 1.5rem;
+  border-top-right-radius: 1.5rem;
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.08);
+  min-height: 90vh;
+  padding-bottom: 7rem;
+}
+
+/* 1. 탭 메뉴 스타일 */
+.tab-header {
+  display: flex;
+  border-bottom: 2px solid #eee;
+  margin-bottom: 1.5rem;
+}
+
+.tab-btn {
+  flex: 1; /* 반반 차지 */
+  background: none;
+  border: none;
+  padding: 1rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #aaa;
+  cursor: pointer;
+  border-bottom: 2px solid transparent; /* 기본 밑줄 투명 */
+  transition: all 0.3s;
+}
+
+/* 활성화된 탭 스타일 */
+.tab-btn.active {
+  color: #000;
+  border-bottom: 2px solid #000; /* 검정 밑줄 */
+}
+
+/* 2. 내용물 배치 */
+
+/* (A) 신청 받은 동행: 2열 그리드 */
+.received-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 1:1 비율 2개 */
+  gap: 10px; /* 사이 간격 */
+}
+
+/* (B) 신청 보낸 동행: 세로 리스트 */
+.sent-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* 3. 성사된 목록 타이틀 */
+.section-title {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #333;
+}
+
+/* --- 기존 코드 수정 및 추가 --- */
+
+/* 탭 헤더: 밑줄 기준점을 잡기 위해 relative 설정은 필요 없지만 깔끔함을 위해 유지 */
+.tab-header {
+  display: flex;
+  position: relative;
+  /* border-bottom: 2px solid #eee;  <-- [중요] 기존의 긴 회색 줄은 지우거나 유지해도 됨 */
+  margin-bottom: 1.5rem;
+}
+
+/* 탭 버튼 */
+.tab-btn {
+  position: relative; /* [중요] 안에 있는 밑줄(absolute)의 기준점이 됨 */
+  flex: 1;
+  background: none;
+  border: none;
+  padding: 1rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #aaa;
+  cursor: pointer;
+  transition: color 0.3s;
+  /* border-bottom: ... <-- [삭제] 기존의 border-bottom은 지워주세요! */
+}
+
+/* 활성 탭 글자색 */
+.tab-btn.active {
+  color: #000;
+  /* border-bottom: ... <-- [삭제] 이것도 지워주세요! */
+}
+

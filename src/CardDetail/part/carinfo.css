@@ -1,0 +1,124 @@
+.car-info-container {
+  padding: 1.3rem 0;      /* 20px */
+  border-bottom: 1px solid #eee;
+}
+
+/* 타이틀 영역 */
+.car-info-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;            /* 8px */
+  margin-bottom: 1rem;    /* 16px */
+
+}
+
+.title-icon {
+  fill: #333;
+}
+
+.car-info-title h3 {
+  margin: 0;
+  font-size: 1.1rem;      /* 18px */
+  font-weight: 700;
+  color: #000;
+
+}
+
+/* 컨텐츠 영역 (Flexbox) */
+
+.car-info-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+/* 왼쪽 텍스트 그룹 */
+
+.info-text-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;            /* 12px */
+
+}
+
+.info-row {
+  display: flex;
+  align-items: center;
+}
+
+.top-row {
+  gap: 0.5rem;            /* 8px */
+}
+/* 정보 박스 공통 (번호판, 탑승인원) */
+
+.info-box {
+
+  border: 1px solid #ccc;
+
+  border-radius: 0.3rem;  /* 4~5px */
+
+  padding: 0.4rem 0.8rem; /* 6px 12px */
+
+  font-size: 0.9rem;      /* 14px */
+
+  font-weight: 700;
+
+  color: #333;
+
+  display: inline-block;
+
+}
+
+
+
+/* 데이터가 없을 때 스타일 */
+
+.info-box.no-data {
+  color: #777;
+  font-weight: 500;
+}
+
+/* 구분점 (•) */
+.separator {
+  color: #333;
+  font-weight: 700;
+  margin-right: 0.3rem;   /* 4~5px */
+}
+
+/* 색상 텍스트 */
+
+.color-text {
+  font-size: 0.9rem;      /* 14px */
+  font-weight: 700;
+  color: #333;
+
+}
+
+/* 오른쪽 이미지 그룹 */
+.info-image-group {
+  flex-shrink: 0;
+}
+/* 실제 차량 이미지 */
+
+.car-image {
+  width: 7.5rem;          /* 120px */
+  height: 5rem;           /* 80px */
+  object-fit: cover;
+  border-radius: 0.5rem;  /* 8px */
+
+}
+
+/* 이미지 없을 때 회색 박스 */
+.image-placeholder {
+  width: 7.5rem;          /* 120px */
+  height: 5rem;           /* 80px */
+  background-color: #d9d9d9;
+  border-radius: 0.5rem;  /* 8px */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.placeholder-icon {
+  fill: #777;
+}

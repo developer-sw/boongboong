@@ -1,0 +1,35 @@
+/* 하단 고정이 아니라 폼 바로 아래에 오는 영역 */
+.profile-edit-save-bar {
+  width: 100%;
+  max-width: 393px;
+  margin: 0 auto;
+
+  box-sizing: border-box;
+  padding: 24px 20px 40px;  /* 위로 당기고 아래 적당히 여백 */
+
+  /* 🔥 더 이상 회색 선/테두리 없음 */
+  border: none;
+  background-color: #ffffff;
+
+  display: flex;
+  justify-content: center;
+}
+
+/* 노란색 "수정 완료" 버튼 */
+.profile-edit-save-button {
+  width: 100%;          /* 양옆 20px 패딩 기준으로 꽉 차게 */
+  max-width: 343px;     /* 디자인 기준 폭 */
+  height: 60px;
+  border-radius: 16px;
+
+  border: none;
+  outline: none;
+
+  background-color: #fedf56;
+
+  font-size: 16px;
+  font-weight: 700;
+  color: #111827;
+
+  cursor: pointer;
+}

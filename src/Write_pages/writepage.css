@@ -1,0 +1,331 @@
+/* --- 기본 레이아웃 설정 --- */
+.write-container {
+  padding: 0 1.25rem; /* 좌우 여백 20px */
+  padding-bottom: 6rem; /* 하단 버튼이 내용을 가리지 않도록 넉넉한 여백 (약 96px) */
+}
+
+/* 상단 헤더 (뒤로가기 + 제목) */
+.write-header {
+  display: flex;
+  align-items: center;
+  padding: 1rem 0; /* 위아래 16px */
+  margin-bottom: 1rem;
+}
+
+.write-header h2 {
+  font-size: 1.125rem; /* 18px */
+  font-weight: 700;
+  margin-left: 0.5rem;
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem; /* 24px */
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+/* 폼 섹션 간격 */
+.form-section {
+  margin-bottom: 2rem; /* 32px */
+}
+
+/* 라벨 스타일 (제목) */
+.form-label {
+  display: block;
+  font-size: 1rem; /* 16px */
+  font-weight: 700;
+  margin-bottom: 0.75rem; /* 12px */
+  color: #111;
+}
+
+.required-star {
+  color: #ff4d4f;
+  margin-left: 0.25rem;
+}
+
+/* --- 1. 역할 선택 버튼 (토글) --- */
+.role-selector {
+  display: flex;
+  gap: 0.625rem; /* 10px */
+}
+
+.role-btn {
+  flex: 1;
+  padding: 0.875rem 0; /* 위아래 14px */
+  border: none;
+  border-radius: 0.5rem; /* 8px */
+  background-color: #F2F4F6; /* 연한 회색 */
+  font-size: 0.9375rem; /* 15px */
+  font-weight: 600;
+  color: #ADB5BD; /* 비활성 텍스트 색상 */
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.role-btn.active {
+  background-color: #FFD643; /* 활성 노란색 */
+  color: #111; /* 활성 텍스트 검정 */
+}
+
+/* --- 2. 경로 입력 박스 (핵심 디자인) --- */
+.route-input-box {
+  display: flex;
+  align-items: center;
+  background-color: #FFFFFF;
+  border: 1px solid #F0F0F0; /* 아주 연한 테두리 */
+  border-radius: 0.75rem; /* 12px */
+  padding: 1rem 1.25rem; /* 내부 여백 */
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.05); /* 부드러운 그림자 */
+}
+
+/* 왼쪽 SVG 아이콘 래퍼 */
+.route-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem; /* 16px */
+}
+
+.path-svg {
+  height: 3.5rem; /* 아이콘 높이 약 56px */
+  width: auto;
+}
+
+/* 오른쪽 입력창 영역 */
+.route-inputs-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* 경로 입력 input (투명 배경) */
+.route-input {
+  width: 100%;
+  border: none;
+  background: transparent;
+  font-size: 1rem;
+  padding: 0.3rem 0;
+  color: #333;
+  outline: none;
+}
+
+.route-input::placeholder {
+  color: #ADB5BD;
+}
+
+/* 경로 중간 구분선 */
+.input-divider {
+  width: 100%;
+  height: 1px;
+  background-color: #F0F0F0;
+  margin: 0.5rem 0; /* 위아래 간격 */
+}
+
+/* --- 3. 공통 Input 스타일 (회색 박스) --- */
+/* 날짜, 시간, 메모 등에 사용 */
+.common-input, 
+.common-textarea,
+select.common-input {
+  width: 100%;
+  padding: 0.9375rem 1rem; /* 15px 16px */
+  border: none;
+  border-radius: 0.5rem; /* 8px */
+  background-color: #F2F4F6; /* 연한 회색 배경 */
+  font-size: 1rem;
+  color: #333;
+  outline: none;
+  box-sizing: border-box;
+  
+  /* iOS 사파리 등에서 기본 스타일 제거 */
+  -webkit-appearance: none; 
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.common-input::placeholder,
+.common-textarea::placeholder {
+  color: #ADB5BD;
+}
+
+/* textarea 높이 설정 */
+.common-textarea {
+  height: 8rem; /* 128px */
+  resize: none;
+  line-height: 1.5;
+  font-family:inherit;
+}
+
+/* --- 커스텀 드롭다운 스타일 --- */
+
+/* 드롭다운 전체 감싸는 통 (위치 기준점) */
+.custom-dropdown-container {
+  position: relative; /* 중요: 자식인 menu가 이 기준으로 배치됨 */
+  width: 100%;
+}
+
+/* 1. 트리거 버튼 (회색 박스) */
+.dropdown-trigger {
+  display: flex;
+  justify-content: space-between; /* 글자는 왼쪽, 화살표는 오른쪽 */
+  align-items: center;
+  cursor: pointer;
+  text-align: left;
+  color: #333;
+}
+
+/* 화살표 아이콘 */
+.arrow-icon {
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: transform 0.3s ease; /* 부드럽게 회전 */
+}
+
+/* 열렸을 때 화살표 뒤집기 */
+.arrow-icon.open {
+  transform: rotate(180deg);
+}
+
+/* 2. 펼쳐지는 메뉴 (흰색 박스) */
+.dropdown-menu {
+  position: absolute; /* 붕 띄우기 */
+  top: 110%; /* 버튼 바로 아래 위치 (간격 살짝 둠) */
+  right: 0; /* 오른쪽 정렬 (또는 width: 100% 하려면 left:0, right:0) */
+  /* width: 100px; 만약 너비를 작게 하고 싶으면 설정 */
+  min-width: 120px; /* 최소 너비 확보 */
+  
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* 그림자 진하게 */
+  padding: 8px 0;
+  margin: 0;
+  list-style: none; /* 리스트 점 없애기 */
+  z-index: 50; /* 다른 요소들보다 위에 뜨도록 */
+  
+  /* 애니메이션 (선택사항) */
+  animation: fadeIn 0.2s ease-out;
+}
+
+/* 메뉴 아이템 (1인, 2인...) */
+.dropdown-item {
+  padding: 12px 20px;
+  font-size: 1rem;
+  color: #333;
+  cursor: pointer;
+  text-align: center; /* 글자 가운데 정렬 */
+  transition: 0.2s;
+}
+
+.dropdown-item:hover {
+  background-color: #f5f5f5; /* 마우스 올렸을 때 살짝 회색 */
+}
+
+/* 애니메이션 정의 */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* 3. 탑승자 모드일 때 비활성화 박스 스타일 */
+.disabled-text {
+  color: #aaa;
+  background-color: #fafafa;
+}
+/* 비활성화된 인풋 (탑승자 선택 시 인원 등) */
+.common-input:disabled,
+.disabled-box {
+  background-color: #FAFAFA;
+  color: #CCC;
+}
+
+/* --- 4. 하단 고정 버튼 --- */
+.submit-btn-fixed {
+  position: fixed;
+  bottom: 1.25rem; /* 20px */
+  left: 1.25rem;
+  right: 1.25rem;
+  /* width는 left/right가 있어서 필요 없음 (자동으로 꽉 참) */
+  
+  background-color: #FFD643;
+  border: none;
+  padding: 1rem 0; /* 높이감 있게 */
+  border-radius: 0.75rem; /* 12px */
+  
+  font-size: 1.125rem; /* 18px */
+  font-weight: 700;
+  color: #111;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(255, 214, 67, 0.2); /* 버튼 그림자 살짝 */
+  z-index: 100; /* 다른 요소 위에 뜨도록 */
+}
+
+/* ... 기존 스타일 ... */
+
+/* --- 피커 모달 관련 스타일 --- */
+
+/* 1. 배경 어둡게 (Overlay) */
+.picker-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* 반투명 검정 */
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+/* 2. 피커 박스 (Bottom Sheet) */
+.picker-modal {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #ffffff;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  z-index: 1001; /* 오버레이보다 위에 */
+  padding-bottom: 20px; /* 아이폰 하단 바 여유 */
+  animation: slideUp 0.3s ease-out; /* 올라오는 애니메이션 */
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* 3. 피커 헤더 (취소/확인 버튼) */
+.picker-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  border-bottom: 1px solid #eee;
+  background-color: #fff;
+  border-radius: 20px 20px 0 0;
+}
+
+.picker-header button {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  color: #666;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.picker-title {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+/* 4. 애니메이션 정의 */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}

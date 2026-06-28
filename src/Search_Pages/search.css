@@ -1,0 +1,84 @@
+.search-page-container {
+  min-height: 100vh; /* 고정 height 대신 min-height 사용 */
+  overflow-y: auto;  /* height를 넘어가면 y축(세로) 스크롤바 자동 생성 */
+  padding-bottom: 70px;
+  box-sizing: border-box;
+}
+
+.search-align-block {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; /* 16px, 원하는대로 조절 */
+  align-items: center;
+}
+
+
+/* Banner 컴포넌트(svg)의 스타일 */
+.banner-wrapper svg {
+  /* (중요) 너비를 부모 요소에 100% 맞춥니다. */
+  /* .search-align-block이 22rem이므로, 배너도 22rem이 됩니다. */
+  width: 100%; 
+  height: auto; 
+  display: block;
+  margin-top: -0.5rem;
+}
+
+.fab-create-post {
+  /* 1. 고정 위치 (내비게이션 바 높이 고려하여 bottom 조정) */
+  position: fixed;
+  bottom: 4.3rem; /* 예: 내비게이션 바(약 60px) + 여백 */
+  right: 1rem;
+  
+  /* 2. 레이아웃 및 디자인 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem; /* 아이콘과 글자 사이 간격 */
+  
+  background-color: #000000;
+  color: #fedf56;
+  font-weight: 600;
+  border: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  z-index: 1000; /* 내비게이션 바보다 위에 오도록 */
+
+  /* 3. 애니메이션 초기값 (펼쳐진 상태) */
+  border-radius: 3rem; 
+  padding: 0.8rem 1.25rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  max-width: 200px; /* 글자가 들어갈 충분한 너비 */
+  overflow: hidden;
+}
+
+/* --- 스크롤 내려갔을 때 (shrink 클래스 추가됨) --- */
+.fab-create-post.shrink {
+  padding: 0.8rem; /* 상하좌우 동일하게 */
+  gap: 0;          /* 간격 제거 */
+  border-radius: 50%; /* 원형으로 변경 */
+  width: 3.5rem;   /* 정사각형 크기 고정 (원형 유지를 위해) */
+  height: 3.5rem;
+}
+
+/* 아이콘 (+) 스타일 */
+.fab-create-post .icon {
+  font-size: 1.5rem;
+  line-height: 1;
+  flex-shrink: 0; /* 크기 줄어듦 방지 */
+}
+
+/* 텍스트 (글쓰기) 스타일 */
+.fab-create-post .text {
+  white-space: nowrap;
+  opacity: 1;
+  max-width: 100px; /* 글자 공간 확보 */
+  transition: all 0.3s ease-in-out;
+  color:#fedf56;
+}
+
+/* shrink 상태일 때 텍스트 숨기기 */
+.fab-create-post.shrink .text {
+  opacity: 0;
+  max-width: 0;
+  margin: 0;
+}

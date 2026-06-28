@@ -1,0 +1,6 @@
+.main-page-container {
+  min-height: 100vh; /* 고정 height 대신 min-height 사용 */
+  overflow-y: auto;  /* height를 넘어가면 y축(세로) 스크롤바 자동 생성 */
+  padding-bottom: 70px;
+  box-sizing: border-box;
+}

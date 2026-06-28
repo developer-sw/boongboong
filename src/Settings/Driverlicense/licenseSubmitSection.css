@@ -1,0 +1,40 @@
+/* 하단 전체 섹션 – 위/아래 여백 줄이기 */
+.license-submit-section {
+  width: 100%;
+  box-sizing: border-box;
+
+  margin-top: 18px;       /* 28px → 8px (주의사항과의 간격 확 줄이기) */
+  padding: 16px 0 8px;    /* 16px 0 8px → 더 타이트하게 */
+}
+
+/* 회색 구분선 – 아래 여백도 조금 줄이기 */
+.license-submit-divider {
+  height: 1px;
+  background-color: #e5e7eb;
+  width: calc(100% + 40px);
+  margin: 0 -20px 12px;  /* 18px → 12px */
+}
+
+/* 운전면허증 등록하기 버튼 */
+.license-submit-button {
+  display: block;
+
+  /* 좌우 padding(20px) 안에서 꽉 차게 */
+  width: 100%;
+  max-width: 353px; /* 디자인 기준 폭 */
+
+  height: 60px;
+  margin: 0 auto;          /* 가운데 정렬 */
+
+  border: none;
+  outline: none;
+  border-radius: 10px;     /* 너무 동글지 않게 → 사각형에 가까운 둥근 모서리 */
+
+  background-color: #fedf56;
+  color: #000000;
+
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+}

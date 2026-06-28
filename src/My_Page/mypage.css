@@ -1,0 +1,88 @@
+/* 전체 화면 래퍼 */
+.mypage-wrapper {
+  width: 100%;
+  height: 100vh; /* 화면 전체 높이 */
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* 전체 스크롤 방지 (헤더 고정 위함) */
+}
+
+/* 헤더를 제외한 나머지 콘텐츠 영역 (스크롤 가능) */
+.mypage-content {
+  flex: 1;
+  overflow-y: auto; /* 세로 스크롤 허용 */
+  padding-bottom: 40px; /* 하단 여백 */
+}
+
+/* 섹션 간의 간격 조절 */
+.info-section {
+  padding: 0 24px; /* 좌우 여백 (Profile, MannerScore와 통일) */
+  margin-bottom: 24px; /* 아래쪽 컴포넌트와의 간격 */
+}
+
+/* 섹션 구분선 (선택 사항) */
+.divider {
+  height: 1px;
+  background-color: #f0f0f0;
+  margin: 20px 24px;
+}
+
+/* 로딩/에러 화면 */
+.loading, .error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 16px;
+  color: #888;
+}
+
+/* mypage.css */
+
+/* 로딩 화면 전체 덮기 & 중앙 정렬 */
+.loading-wrapper {
+  position: fixed; /* 혹은 absolute */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #ffffff; /* 흰색 배경 */
+  display: flex;
+  flex-direction: column; /* 세로 정렬 */
+  justify-content: center;
+  align-items: center;
+  z-index: 999; /* 다른 요소보다 위에 뜨게 */
+}
+
+/* 뱅글뱅글 도는 원 */
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #f3f3f3; /* 회색 테두리 (배경) */
+  border-top: 4px solid #FFC700; /* 붕붕이 노란색 (포인트) */
+  border-radius: 50%; /* 원형 만들기 */
+  animation: spin 1s linear infinite; /* 1초마다 무한 회전 */
+  margin-bottom: 16px; /* 글자와의 간격 */
+}
+
+/* 로딩 멘트 스타일 */
+.loading-wrapper p {
+  color: #888;
+  font-size: 14px;
+  font-weight: 500;
+  animation: pulse 1.5s ease-in-out infinite; /* 깜빡깜빡 효과 */
+}
+
+/* 회전 애니메이션 정의 */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* 깜빡임 애니메이션 정의 */
+@keyframes pulse {
+  0% { opacity: 0.6; }
+  50% { opacity: 1; }
+  100% { opacity: 0.6; }
+}

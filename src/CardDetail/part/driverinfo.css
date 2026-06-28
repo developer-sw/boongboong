@@ -1,0 +1,220 @@
+/* DriverInfo.css */
+
+/* 최상위 컨테이너 */
+.driver-info-container {
+  padding: 0rem 0;      /* 24px -> 1.5rem */
+  background-color: #fff;
+}
+
+/* --- 1. 섹션 타이틀 --- */
+.driver-info-container .section-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;            /* 8px -> 0.5rem */
+  font-size: 1.1rem;      /* 18px -> 1.1rem */
+  font-weight: 800;
+  margin: 0 0 1.3rem 0;   /* 20px -> 1.25rem -> 1.3rem */
+  color: #111;
+}
+
+.driver-info-container .icon-handle {
+  fill: #333; 
+}
+
+/* --- 2. 프로필 헤더 --- */
+.driver-info-container .profile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;  /* 24px -> 1.5rem */
+}
+
+.driver-info-container .profile-user {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;            /* 10px -> 0.625rem -> 0.6rem */
+}
+
+.driver-info-container .avatar-circle {
+  width: 2.5rem;          /* 40px -> 2.5rem */
+  height: 2.5rem;         /* 40px -> 2.5rem */
+  background-color: #222; 
+  color: #fcc419;         
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  font-size: 1.1rem;      /* 18px -> 1.1rem */
+}
+
+.driver-info-container .user-name {
+  font-size: 1rem;        /* 16px -> 1rem */
+  font-weight: 600;
+  color: #333;
+}
+
+.driver-info-container .total-rating {
+  font-size: 1rem;        /* 16px -> 1rem */
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;            /* 4px -> 0.25rem -> 0.3rem */
+}
+
+.driver-info-container .star-icon {
+  font-size: 0.9rem;      /* 14px -> 0.875rem -> 0.9rem */
+  position: relative;
+  top: -0.1rem;           /* -1px -> -0.1rem */
+}
+
+/* --- 3. 매너 지표 섹션 --- */
+.driver-info-container .manner-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; 
+  margin-bottom: 1.9rem;  /* 30px -> 1.875rem -> 1.9rem */
+}
+
+.driver-info-container .manner-text-col {
+  flex: 1;
+  padding-right: 0.6rem;  /* 10px -> 0.6rem */
+}
+
+.driver-info-container .manner-main-text {
+  font-size: 1rem;        /* 16px -> 1rem */
+  color: #333;
+  line-height: 1.4;
+  margin: 0 0 0.5rem 0;   /* 8px -> 0.5rem */
+}
+
+.driver-info-container .manner-main-text strong {
+  font-weight: 800;
+}
+
+.driver-info-container .help-label {
+  display: block;
+  font-size: 0.8rem;      /* 12px -> 0.75rem -> 0.8rem */
+  color: #aaa;
+  margin-bottom: 0.3rem;  /* 4px -> 0.3rem */
+}
+
+.driver-info-container .help-desc {
+  font-size: 0.8rem;      /* 12px -> 0.8rem */
+  color: #ccc;     
+  line-height: 1.4;
+  margin: 0;
+  word-break: keep-all; 
+}
+
+.driver-info-container .manner-img-col {
+  display: flex;
+  align-items: flex-start;
+  padding-top: 0.6rem;    /* 10px -> 0.6rem */
+}
+
+/* --- 4. 리뷰 가로 스크롤 영역 --- */
+.driver-info-container .review-scroll-area {
+  display: flex;
+  gap: 0.8rem;
+  overflow-x: auto;
+  padding: 0.5rem 0.5rem 1rem 0.5rem; /* 그림자 잘림 방지 여백 */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  
+  /* 중요: 카드와 더보기 버튼의 높이가 다르므로 세로 중앙 정렬 */
+  align-items: center; 
+}
+
+.driver-info-container .review-scroll-area::-webkit-scrollbar {
+  display: none;
+}
+
+/* --- 리뷰 카드 (기존 스타일 유지하되 화살표 관련 제거) --- */
+.driver-info-container .review-card {
+  min-width: 15rem;
+  border: 1px solid #f0f0f0;
+  border-radius: 0.8rem;
+  padding: 1rem;      /* 패딩 원상복구 */
+  background-color: #fff;
+  box-shadow: 0 0.3rem 0.9rem rgba(0,0,0,0.1);
+  flex-shrink: 0;
+  position: relative;
+  /* 카드 높이가 내용에 따라 달라지지 않게 고정하고 싶다면 아래 주석 해제 */
+  /* height: 8rem; */
+}
+
+/* 기존 CSS에 있던 .review-card::after 와 padding 수정 코드는 삭제해주세요 */
+
+.driver-info-container .card-stars {
+  color: #333;
+  font-size: 0.8rem;
+  letter-spacing: -0.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.driver-info-container .card-text {
+  font-size: 0.9rem;
+  color: #333;
+  line-height: 1.4;
+  margin: 0 0 1.5rem 0;
+  word-break: keep-all;
+  /* 텍스트가 넘칠 경우 말줄임 처리를 위해 */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  height: 2.5rem; 
+}
+
+.driver-info-container .reviewer-name {
+  font-size: 0.8rem;
+  color: #ccc;
+  display: block;
+}
+
+
+/* --- [새로 추가] 더보기 영역 스타일 --- */
+
+/* 1. 더보기 아이템 전체 컨테이너 */
+.driver-info-container .see-more-item {
+  display: flex;
+  flex-direction: column; /* 버튼과 텍스트를 위아래로 배치 */
+  align-items: center;    /* 가로 중앙 정렬 */
+  justify-content: center;
+  flex-shrink: 0;         /* 스크롤 시 찌그러짐 방지 */
+  margin-left: 0.5rem;    /* 마지막 카드와의 간격 살짝 추가 */
+  cursor: pointer;        /* 마우스 올렸을 때 손가락 표시 */
+  text-decoration: none;
+}
+
+/* 2. 검은색 원형 버튼 */
+.driver-info-container .see-more-btn {
+  width: 3rem;           /* 버튼 크기 (약 48px) */
+  height: 3rem;
+  border-radius: 50%;    /* 완전한 원형 */
+  background-color: #1a1a1a; /* 진한 검정색 (이미지와 유사) */
+  border: none;
+  
+  display: flex;         /* 내부 화살표 정렬 */
+  align-items: center;
+  justify-content: center;
+  
+  color: #fff;           /* 화살표 색상 */
+  font-size: 1.2rem;     /* 화살표 크기 */
+  margin-bottom: 0.5rem; /* 텍스트와의 간격 */
+  transition: transform 0.2s ease; /* 눌렀을 때 살짝 효과 */
+  cursor: pointer;
+}
+
+/* (선택) 마우스 올렸을 때 살짝 커지는 효과 */
+.driver-info-container .see-more-item:hover .see-more-btn {
+  transform: scale(1.05);
+  background-color: #000;
+}
+
+/* 3. '더보기' 텍스트 */
+.driver-info-container .see-more-text {
+  font-size: 0.9rem;
+  color: #333;
+  font-weight: 500;
+}

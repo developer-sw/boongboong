@@ -1,70 +1,82 @@
-// src/Passwd_Find_Pages/Pwcode.jsx
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import "./Pwcode.css"; // CSS 파일 경로는 실제 위치에 맞게 조정하세요.
+import React, { useState, useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
+import { authApi } from "../api/authApi"; // ✅ API import
+import "./Pwcode.css";
 
 export default function Pwcode() {
   const navigate = useNavigate();
-  const [code, setCode] = useState("");
-  const [error, setError] = useState(""); // 에러 메시지 상태
+  const location = useLocation();
+  
+  // Pwfind 페이지에서 넘겨준 email 받기
+  const email = location.state?.email;
 
-  // "완료" 버튼 클릭 시 실행될 함수
-  const handleSubmit = (e) => {
-    e.preventDefault(); // form 태그의 기본 동작(새로고침) 방지
+  const [code, setCode] = useState("");
+  const [error, setError] = useState("");
+
+  // 비정상적인 접근(이메일 없이 들어옴) 차단
+  useEffect(() => {
+    if (!email) {
+      alert("잘못된 접근입니다. 처음부터 다시 시도해주세요.");
+      navigate("/pwfind");
+    }
+  }, [email, navigate]);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
     if (!code.trim()) {
       setError("인증번호를 입력해주세요.");
       return;
     }
 
-    // --- 데모용 인증 로직 ---
-    // 실제 앱에서는 여기서 API 서버로 인증번호를 보내 검증합니다.
-    // 임시로 '123456'을 정답으로 설정합니다.
-    if (code === "123456") {
+    try {
+      // API 호출: 코드 검증
+      await authApi.verifyResetCode(email, code);
+
       alert("인증되었습니다. 비밀번호를 재설정합니다.");
-      navigate("/pwsetting"); // 인증 성공 시 다음 페이지로 이동
-    } else {
-      setError("인증번호를 다시 확인해주세요."); // 인증 실패 시 에러 메시지 표시
+      
+      // 성공 시 다음 페이지(Pwsetting)로 email 정보 토스
+      navigate("/pwsetting", { state: { email } });
+
+    } catch (err) {
+      console.error("인증 실패:", err);
+      // 서버 에러 메시지 활용 가능하면 err.response.data.message 등 사용
+      setError("인증번호가 일치하지 않거나 만료되었습니다.");
     }
   };
 
   return (
     <main className="pwcode">
-      {/* 뒤로가기 버튼 */}
       <button className="back-btn" onClick={() => navigate(-1)} aria-label="뒤로가기">
         〈
       </button>
 
-      {/* 제목과 부제목 */}
       <h1 className="title">비밀번호 재설정</h1>
-      <p className="subtitle">이메일이 오지 않았다면 정크함을 확인하세요.</p>
+      <p className="subtitle">
+        {email}<br/>
+        메일함의 인증코드를 입력해주세요.
+      </p>
 
-      {/* 인증코드 입력 폼 */}
       <form className="card" onSubmit={handleSubmit}>
         <div className="label-row">
           <label className="label">인증코드</label>
-          {/* 에러 메시지가 있을 때만 표시 */}
           {error && <span className="label-help error">{error}</span>}
         </div>
 
         <input
           type="text"
-          className={`control ${error ? "invalid" : ""}`} // 에러 시 input 테두리 스타일 변경
-          placeholder="인증번호를 입력하세요"
+          className={`control ${error ? "invalid" : ""}`}
+          placeholder="인증번호 6자리"
           value={code}
           onChange={(e) => {
             setCode(e.target.value);
-            // 입력값을 변경하면 에러 메시지를 초기화
-            if (error) {
-              setError("");
-            }
+            if (error) setError("");
           }}
           inputMode="numeric"
           autoComplete="one-time-code"
         />
 
-        {/* 완료 버튼 */}
         <button type="submit" className="btn primary submit" disabled={!code.trim()}>
-          완료
+          인증 확인
         </button>
       </form>
     </main>

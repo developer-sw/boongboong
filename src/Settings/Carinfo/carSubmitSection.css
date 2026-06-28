@@ -1,0 +1,38 @@
+/* 차량정보 등록하기 영역 전체 */
+.car-submit {
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 24px;        /* 🔥 양쪽 -20px 마진 제거 */
+}
+
+/* 상단 회색 가로선 – 화면 양 끝까지 */
+.car-submit-divider {
+  width: calc(100% + 40px);  /* 패딩(20px*2) 감안해서 선만 좌우로 확장 */
+  height: 1px;
+  background-color: #e5e7eb;
+  margin: 0 -20px 12px;      /* 선만 -20px, 버튼은 정상 위치 */
+}
+
+/* 안쪽 컨테이너: 가운데 정렬, 최대 402px */
+.car-submit-inner {
+  max-width: 402px;          /* 🔥 컴포넌트 박스 폭 */
+  margin: 0 auto 6px;        /* 가운데 정렬 */
+  padding: 0;
+}
+
+/* 노란 버튼 – 컨테이너를 꽉 채우도록 */
+.car-submit-button {
+  width: 100%;
+  height: 60px;
+  border: none;
+  border-radius: 12px;
+  background-color: #fedf56;
+  font-size: 16px;
+  font-weight: 600;
+  color: #000000;
+  cursor: pointer;
+}
+
+.car-submit-button:active {
+  transform: translateY(1px);
+}

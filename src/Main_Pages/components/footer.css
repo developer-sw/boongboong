@@ -1,0 +1,12 @@
+/* 푸터 컨테이너 기본 스타일 */
+.footer-container {
+  width: 100%;
+}
+
+.footer-container svg {
+  /* SVG가 부모 요소(.footer-container)의 너비에 100% 맞춰집니다. */
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-top: -1.2rem;
+}

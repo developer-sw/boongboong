@@ -1,0 +1,16 @@
+/* 전체 프로필 설정 페이지 – 흰색 배경 */
+.profile-edit-page {
+  width: 393px;
+  min-height: 100vh;
+  margin: 0 auto;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 헤더 아래 내용 영역 (필요하면 사용) */
+.profile-edit-main {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 20px;
+}

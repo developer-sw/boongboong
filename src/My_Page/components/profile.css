@@ -1,0 +1,59 @@
+/* 전체 프로필 컨테이너 */
+.profile-container {
+  display: flex;
+  align-items: center; /* 수직 중앙 정렬 */
+  padding: 20px 24px; /* 상하 20px, 좌우 24px 여백 (화면 보며 조절) */
+  background-color: #fff;
+}
+
+/* 회색 원형 아바타 */
+.profile-avatar {
+  width: 64px;  /* 이미지상의 대략적인 크기 */
+  height: 64px;
+  background-color: #EAEAEA; /* 연한 회색 배경 */
+  border-radius: 50%; /* 원형 만들기 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 16px; /* 이름과의 간격 */
+  flex-shrink: 0; /* 화면이 줄어도 찌그러지지 않음 */
+}
+
+/* 아바타 안의 글자 (S, B) */
+.avatar-initial {
+  font-size: 24px;
+  font-weight: 500;
+  color: #000;
+}
+
+/* 이름과 연필 아이콘을 감싸는 영역 */
+.profile-info {
+  display: flex;
+  align-items: center;
+  gap: 6px; /* 이름과 연필 사이 간격 */
+}
+
+/* 닉네임 텍스트 */
+.nickname {
+  font-size: 20px;
+  font-weight: 600; /* 적당히 굵게 */
+  color: #000;
+  margin: 0; /* h2 태그 기본 여백 제거 */
+  line-height: 1.2;
+}
+
+/* 수정 버튼 (연필) */
+.edit-btn {
+  background: none;
+  border: none;
+  padding: 4px; /* 터치 영역 확보 */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* SVG 아이콘 색상 등 미세 조정이 필요하면 사용 */
+.edit-btn svg {
+  /* fill: #333; */ /* 필요 시 색상 지정 */
+}

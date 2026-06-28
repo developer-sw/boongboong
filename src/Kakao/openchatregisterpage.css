@@ -1,0 +1,139 @@
+/* 1. 최상위 컨테이너 */
+.register-page-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* 2. 헤더 스타일 */
+.register-page-container header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 20px;
+  position: relative;
+  height: 50px;
+  box-sizing: border-box;
+  /* [유지] 헤더 구분선 진하게 */
+  border-bottom: 1px solid #e5e5e5; 
+}
+
+/* 3. 뒤로가기 버튼 */
+.register-page-container .nav-back-btn {
+  position: absolute;
+  left: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+/* 4. 헤더 제목 */
+.register-page-container .header-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* 5. 상단 캐릭터 이미지 영역 (Hero Section) - 높이 수정됨 */
+.register-page-container .hero-image-area {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  overflow: hidden;
+  
+  /* [수정] 위쪽 여백을 주어 이미지가 더 높고 시원해 보이게 함 */
+  padding-top: 50px; 
+  padding-bottom: 0; /* 아래쪽은 텍스트와 붙임 */
+}
+
+/* SVG 컴포넌트 스타일 */
+.register-page-container .top-image {
+  /* [수정] 너비를 110%로 설정하여 살짝 확대 -> 자연스럽게 높이도 커짐 */
+  width: 110%; 
+  height: auto;
+  display: block;
+}
+
+/* 6. 내용 영역 */
+.register-page-container .content-area {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  flex: 1;
+}
+
+/* 7. 텍스트 스타일 */
+.register-page-container .text-group {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.register-page-container .content-area h3 {
+  font-size: 18px;
+  margin: 0 0 8px 0;
+  font-weight: 700;
+  color: #000;
+  display: flex;
+  align-items: center;
+}
+
+.register-page-container .required-dot {
+  color: #ff0000;
+  margin-left: 4px;
+}
+
+.register-page-container .content-area p {
+  color: #999;
+  font-size: 14px;
+  margin: 0;
+  font-weight: 400;
+}
+
+/* 8. 링크 입력 인풋 */
+.register-page-container .link-input {
+  width: 100%;
+  padding: 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 15px;
+  margin-bottom: 40px;
+  box-sizing: border-box;
+  color: #333;
+}
+
+.register-page-container .link-input::placeholder {
+  color: #ccc;
+}
+
+.register-page-container .link-input:focus {
+  outline: none;
+  border-color: #FFD400;
+}
+
+/* 9. 계속하기 버튼 */
+.register-page-container .btn-submit-yellow {
+  width: 100%;
+  padding: 16px;
+  background-color: #Fedf56;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #000;
+  cursor: pointer;
+  margin-top: auto;
+}
+
+@media (min-height: 600px) {
+    .register-page-container .btn-submit-yellow {
+        margin-top: 20px;
+    }
+}

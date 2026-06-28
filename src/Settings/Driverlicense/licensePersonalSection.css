@@ -1,0 +1,75 @@
+/* src/components/licensePersonalSection.css */
+
+/* 전체 섹션 (약 354 x 327 느낌) */
+.license-personal-section {
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 32px; /* 면허증 정보와 간격 */
+}
+
+/* 제목 줄 */
+.license-personal-title-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 16px;
+}
+
+.license-personal-title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 900;
+  color: #222222;
+}
+
+/* 빨간 점 (필수 표시) */
+.license-personal-required {
+  font-size: 22px;
+  line-height: 1;
+  color: #f2403e;
+}
+
+/* 각 필드 블록 */
+.license-personal-field {
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 18px;
+}
+
+/* 라벨 텍스트 (이름 / 생년월일 / 주소) */
+.license-personal-label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #939393;
+}
+
+/* 입력 박스 (354 x 48 느낌) */
+.license-personal-input-box {
+  width: 100%;
+  height: 48px;
+  box-sizing: border-box;
+  border-radius: 12px;
+  background-color: #f2f4f6;
+  padding: 0 14px;
+
+  display: flex;
+  align-items: center;
+}
+
+/* 실제 인풋 */
+.license-personal-input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+  font-weight: 500;
+  color: #111827;
+}
+
+/* placeholder 색 (C3C3C3) */
+.license-personal-input::placeholder {
+  color: #c3c3c3;
+}

@@ -1,0 +1,44 @@
+/* src/pages/settingsPage.css */
+
+/* 설정 전체 화면 */
+.settings-screen {
+  width: 393px;
+  min-height: 1037px;
+  margin: 0 auto;
+
+  /* 👉 전체 페이지 기본 배경을 연한 그레이로 */
+  background-color: #F3F3F3;
+
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 회색 배경 위에 직접 올리는 하단 액션 영역 */
+.settings-footer-actions {
+  width: 100%;
+
+  /* 앱 버전정보 카드와 간격 더 벌리기 */
+  margin-top: 82px;
+
+  /* 좌측 20px 정도 여백 두고 왼쪽 정렬 */
+  padding: 0 20px 60px;
+
+  display: flex;
+  justify-content: flex-start;  /* ← 중앙 말고 왼쪽 정렬 */
+  align-items: center;
+  gap: 32px;                    /* 로그아웃 / 회원탈퇴 사이 간격 */
+}
+
+/* 텍스트 버튼 – 회색 진한 글씨 */
+.settings-footer-btn {
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+
+  font-size: 14px;
+  font-weight: 600;
+  color: #9ca3af;               /* 디자인안 같은 회색 톤 */
+}

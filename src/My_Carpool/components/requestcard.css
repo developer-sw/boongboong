@@ -1,0 +1,100 @@
+/* 카드 전체 컨테이너 */
+.request-card {
+  background-color: #ffffff;
+  border-radius: 1.25rem;        /* 20px */
+  padding: 1.5rem 1rem;          /* 위아래 여백 넉넉히 */
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  
+  box-sizing: border-box;
+  text-align: center;
+  height: 100%;
+}
+
+/* 프로필 아이콘 (RouteCard의 .profile-initial 스타일 적용) */
+.profile-circle {
+  /* RouteCard와 동일한 색상 조합 */
+  background-color: #000;
+  color: #f5e753;                /* RouteCard의 텍스트 색상 */
+  font-weight: 600;              /* RouteCard의 폰트 굵기 */
+  
+  /* 모양 잡기 */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* RequestCard에서는 아이콘이 더 크므로 사이즈만 조정 (large 클래스) */
+.profile-circle.large {
+  width: 3rem;       /* 48px */
+  height: 3rem;      /* 48px */
+  font-size: 1.25rem; /* 20px */
+  margin-bottom: 0.75rem;
+}
+
+/* 안내 멘트 */
+.request-text {
+  font-size: 0.9375rem; /* 15px */
+  line-height: 1.4;
+  color: #333333;
+  margin: 0;
+  margin-bottom: 1.25rem;
+  word-break: keep-all;
+}
+
+.request-text strong {
+  font-weight: 700;
+  color: #000000;
+}
+
+/* 버튼 그룹 */
+.btn-group {
+  display: flex;
+  width: 100%;
+  gap: 0.5rem;
+  justify-content: center; /* 버튼 그룹 가로 중앙 정렬 */
+  margin-top: 10px;        /* 상단 여백 (필요 시 조절) */
+}
+
+/* 버튼 공통 스타일 */
+.request-card.btn {
+flex: 1;                 /* 두 버튼의 너비를 균등하게 꽉 채움 (싫으면 제거) */
+  border: none;            /* 테두리 없음 */
+  border-radius: 12px;     /* 테두리 둥글게 */
+  padding: 12px 0;         /* 버튼 높이감 확보 */
+  font-weight: 600;        /* 글씨 굵게 */
+  font-size: 14px;
+  cursor: pointer;
+  
+  /* 텍스트 정렬 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+/* 수락 버튼 (RouteCard의 노란색 #fedf56 사용) */
+.btn.accept {
+  background-color: #fedf56; 
+  color: #000000;
+  border-radius: 15%;  border: none;  
+  width: 30%;
+}
+
+/* 거절 버튼 */
+.btn.reject {
+  background-color: #fff8e7; 
+  color: #ff5c5c; 
+  border-radius: 15%;  
+  border: none;  
+   width: 30%;
+}

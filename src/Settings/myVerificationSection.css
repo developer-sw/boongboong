@@ -1,0 +1,93 @@
+/* 바깥 여백/위치 (393 폭, 좌우 20px → 카드 353px) */
+.mypage-verify {
+  width: 393px;
+  box-sizing: border-box;
+  padding: 0 20px;
+  margin-top: 16px;
+}
+
+/* 둥근 흰색 카드 (353 x 172 느낌) */
+.mypage-verify-card {
+  width: 100%;              /* 부모 padding 제외한 353px */
+  min-height: 172px;
+  box-sizing: border-box;
+
+  background-color: #ffffff;
+  border-radius: 24px;
+  padding: 16px 20px 18px;
+
+  box-shadow: none;
+}
+
+/* 상단 라벨 */
+.mypage-verify-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #9ca3af;
+  margin-bottom: 10px;
+  padding: 0 10px; /* 행과 정렬 */
+}
+
+/* 행 공통 버튼 */
+.mypage-verify-row {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+/* 한 줄 레이아웃 – 오른쪽 padding만 줄여서 더 오른쪽으로 붙이기 */
+.mypage-verify-row-content {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 10px 6px 10px 10px; /* 오른쪽 10 → 6 */
+}
+
+/* 왼쪽 메인 텍스트 */
+.mypage-verify-main {
+  font-size: 14px;
+  font-weight: 550;
+  color: #111827;
+  text-align: left;
+}
+
+/* 오른쪽 영역(상태 + 화살표) */
+.mypage-verify-right {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* 상태 텍스트 */
+.mypage-verify-status {
+  font-size: 13px;
+  font-weight: 550;
+}
+
+.status-unverified {
+  color: #ef4444;
+}
+.status-pending {
+  color: #ef4444;
+}
+.status-verified {
+  color: #00ff26;
+}
+
+/* 오른쪽 화살표 – 새 아이콘 크기에 맞게 */
+.mypage-verify-arrow {
+  width: 24px;   /* 49px → 24px 정도로 */
+  height: 24px;
+  display: block;
+}
+
+/* 가운데만 보이는 얇은 회색 선 */
+.mypage-verify-divider {
+  height: 1px;
+  background-color: #e5e7eb;
+  margin: 0 10px;
+}

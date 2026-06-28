@@ -1,0 +1,18 @@
+/* 전체 리스트 컨테이너 */
+.history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;       /* 아이템 사이의 간격 */
+  padding: 16px;   /* 전체 테두리 여백 */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* 로딩 중, 내역 없음 등 안내 메시지 스타일 */
+.history-message {
+  text-align: center;
+  padding: 40px 20px;
+  color: #888;
+  font-size: 15px;
+  line-height: 1.5;
+}

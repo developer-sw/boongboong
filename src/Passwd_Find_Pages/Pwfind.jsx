@@ -1,16 +1,16 @@
 import React, { useMemo, useState } from "react";
 import { useNavigate } from 'react-router-dom';
+import { authApi } from "../api/authApi"; // ✅ API import 경로 확인
 import "./Pwfind.css";
 
 const EMAIL_DOMAIN = "@office.hanseo.ac.kr";
 
 export default function Pwfind() {
   const navigate = useNavigate();
-  const goToPwcode = () => {
-    navigate("/pwcode");  // ✅ 비밀번호 찾기 페이지로 이동
-  };
+  
   // --- form states
   const [emailId, setEmailId] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   // --- validation
   const emailIdValid = useMemo(() => /^[0-9]{9}$/i.test(emailId), [emailId]);
@@ -18,17 +18,31 @@ export default function Pwfind() {
     email: emailId.length > 0,
   };
 
-  const formValid = emailIdValid
+  const formValid = emailIdValid && !isLoading;
 
-  // --- submit (연동 부분만 바꾸면 됨)
-  const onSubmit = (e) => {
+  // --- submit
+  const onSubmit = async (e) => {
     e.preventDefault();
     if (!formValid) return;
+
     const email = `${emailId}${EMAIL_DOMAIN}`;
-    // TODO: 실제 API 연동
-    // await api.post("/auth/pw-reset-request", { email })
-    alert(`비밀번호 재설정 코드 요청\nemail: ${email}`);
-    goToPwcode();
+    setIsLoading(true);
+
+    try {
+      // 1. 인증 코드 전송 API 호출
+      await authApi.sendResetCode(email);
+      
+      alert(`인증 코드가 발송되었습니다.\nEmail: ${email}`);
+
+      // 2. 성공 시 다음 페이지로 이동하면서 email 상태 전달
+      navigate("/pwcode", { state: { email } }); 
+      
+    } catch (error) {
+      console.error("코드 전송 실패:", error);
+      alert("인증 코드 전송에 실패했습니다. 학번을 확인하거나 잠시 후 다시 시도해주세요.");
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -36,7 +50,7 @@ export default function Pwfind() {
       <header className="pwfind-header">
         <button className="back-btn" type="button" aria-label="뒤로가기" onClick={() => navigate(-1)}>〈</button>
         <h1 className="title">비밀번호 찾기</h1>
-        <p className="subtitle">이메일을 입력하고 비밀번호 재설정 코드를 받으세요</p>
+        <p className="subtitle">학번을 입력하면 학교 이메일로 인증코드가 전송됩니다.</p>
       </header>
 
       <form className="login-card" onSubmit={onSubmit} noValidate>
@@ -52,7 +66,7 @@ export default function Pwfind() {
           <div className={`input-with-suffix ${hasTouched.email && !emailIdValid ? "invalid" : ""}`}>
             <input
               type="text"
-              placeholder="아이디 입력"
+              placeholder="학번 입력"
               value={emailId}
               onChange={(e) => setEmailId(e.target.value)}
               inputMode="numeric"
@@ -63,10 +77,9 @@ export default function Pwfind() {
           </div>
         </div>
         <button type="submit" className="btn-primary" disabled={!formValid}>
-          이메일로 코드 받기
+          {isLoading ? "전송 중..." : "이메일로 코드 받기"}
         </button>
       </form>
     </div>
   );
 }
-

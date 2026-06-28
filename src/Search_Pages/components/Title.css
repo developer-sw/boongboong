@@ -1,0 +1,24 @@
+/* 기존 코드에 margin-top 한 줄만 추가 */
+
+.search-page-title-wrapper .searchbar-container {
+  background-color: transparent;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 0.6rem 0; 
+  width: 100%;
+  margin: 1rem 0 0 0; 
+}
+
+/* .span 이나 span을 지우고
+  .searchbar-title에 직접 font-size를 줍니다.
+*/
+.search-page-title-wrapper .searchbar-title span{
+  font-size: 1.3rem; /* 5rem은 매우 클 수 있으니, 적절한 크기로 조절하세요 */
+  display: flex;
+  align-items: center;
+  justify-content: center; /* 가운데 정렬 */
+}
+
+.search-page-title-wrapper .searchbar-input-area {
+  width: 22rem;
+}

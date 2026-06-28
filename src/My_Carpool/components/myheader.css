@@ -1,0 +1,142 @@
+/* 전체 컨테이너 */
+.screen-container {
+  position: relative;
+  width: 100%;
+  height: auto;
+  background-color: #EDEDED;
+  z-index: 1;
+}
+
+/* --- 헤더 영역 --- */
+.top-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem; /* 20px -> 1.25rem */
+  position: relative;
+  z-index: 10;
+}
+
+/* 로고 사이즈 제어 */
+.logo-svg {
+  width: 7.5rem; /* 120px -> 7.5rem */
+  height: auto; 
+}
+
+.notification-wrapper {
+  position: absolute;
+  top: 1.5rem; /* 24px */
+  right: 1.25rem; /* 20px */
+  z-index: 3;
+}
+
+
+/* --- 콘텐츠 영역 --- */
+.content-area {
+  padding-top: 2rem; /* 10px */
+}
+
+.page-title {
+  padding-left: 1.25rem;  /* 20px */
+  margin-bottom: 1.5rem; /* 20px */
+  font-size: 1.25rem;     /* 20px */
+  font-weight: bold;
+  color: #fff; 
+  position: relative;
+  z-index: 10;
+}
+
+.visual-area {
+  position: relative;
+  width: 100%;
+}
+
+/* 배경 도로 사이즈 제어 */
+.background-road {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 0;
+}
+
+.background-road::after {
+  content: ''; 
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50%; 
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, transparent 100%);
+  z-index: 1; 
+  pointer-events: none;
+}
+
+.road-svg {
+  width: 100%;
+  height: 100%;    
+  object-fit: cover;
+  display: block; 
+}
+
+/* 카드 레이어 위치 */
+.card-layer {
+  position: relative;
+  z-index: 5;
+  padding: 0 1.25rem;    /* 0 20px */
+  margin-top: 3.75rem;   /* 60px */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pagination-dots {
+  display: flex;
+  gap: 0.5rem;           /* 8px */
+  margin-top: 0.9375rem; /* 15px */
+}
+
+.dot {
+  width: 0.375rem;  /* 6px */
+  height: 0.375rem; /* 6px */
+  border-radius: 50%;
+  background-color: #ccc;
+}
+
+.dot.active {
+  background-color: #333;
+}
+
+/* myheader.css */
+
+.my-swiper {
+  width: 100%;
+  position: relative;
+  
+  /* 🔥 [핵심 수정] 카드 아래에 점이 살 공간을 50px(3rem) 정도 만듭니다. */
+  /* 이 공간은 흰색이 아니라 투명합니다. */
+  padding-bottom: 1rem !important; 
+}
+
+.my-swiper .swiper-pagination {
+  /* 위에서 만든 3rem의 공간 끝에 배치됩니다. */
+  bottom: 0 !important; 
+  
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  z-index: 10;
+}
+
+/* 점 스타일은 그대로 유지 */
+.my-swiper .swiper-pagination-bullet {
+  width: 0.375rem;
+  height: 0.375rem;
+  background-color: #706f6f; 
+  opacity: 1;
+  margin: 0 0.25rem !important;
+}
+
+.my-swiper .swiper-pagination-bullet-active {
+  background-color: #000000; 
+}

@@ -1,0 +1,48 @@
+/* 전체 아이템 카드 */
+.sent-request-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  background: #ffffff;
+  padding: 14px 18px;
+
+  border-radius: 16px;
+  margin-bottom: 12px;
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+
+  box-sizing: border-box;
+}
+
+/* 프로필 동그라미 */
+.profile-circle.small {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+
+  background-color: #222222;
+  color: #fedf56;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 18px;
+  font-weight: 700;
+
+  flex-shrink: 0; /* 줄바꿈 방지 */
+}
+
+/* 텍스트 영역 */
+.sent-text {
+  font-size: 15px;
+  color: #1A1A1A;
+  margin: 0;
+
+  line-height: 1.4;
+}
+
+.sent-text strong {
+  font-weight: 700;
+}

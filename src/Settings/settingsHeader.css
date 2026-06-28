@@ -1,0 +1,54 @@
+/* src/components/settingsHeader.css */
+
+/* 상단 설정 헤더 (393 x 64) */
+.settings-header {
+  width: 393px;
+  height: 64px;
+  box-sizing: border-box;
+  padding: 0 20px;
+
+  position: relative;              /* 중앙 제목 + 왼쪽 버튼 배치용 */
+  display: flex;
+  align-items: center;
+  justify-content: center;         /* 기본 정렬은 가운데 */
+
+  background-color: #ffffff;
+  border-bottom: 1px solid #e5e7eb; /* 아랫쪽 얇은 회색 선 */
+}
+
+/* 왼쪽 뒤로가기 버튼 */
+.settings-header-back {
+  position: absolute;
+  left: 20px;                      /* 좌측 여백 */
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 32px;                     /* 클릭 영역은 살짝 넓게 */
+  height: 32px;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+}
+
+/* 뒤로가기 아이콘 (14 x 28) */
+.settings-header-back-icon {
+  width: 14px;
+  height: 28px;
+  display: block;
+}
+
+/* "설정" 텍스트 (센터 정렬) */
+.settings-header-title {
+  margin: 0;
+  font-size: 16px;        /* 높이 20px 정도 느낌 */
+  font-weight: 700;
+  color: #111827;
+  text-align: center;
+}

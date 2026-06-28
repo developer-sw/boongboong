@@ -1,0 +1,109 @@
+/* 컴포넌트 전체 컨테이너 */
+.manner-container {
+  width: 100%;
+  padding: 0 24px; /* 좌우 여백 (Profile과 동일하게 맞춤) */
+  box-sizing: border-box;
+  margin-top: 10px; /* 위쪽 요소와의 간격 */
+  margin-bottom: 20px;
+}
+
+/* 상단 헤더 (텍스트와 아이콘들) */
+.manner-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px; /* 게이지 바와의 간격 */
+}
+
+/* 왼쪽: "매너 꿀벌" + Info 아이콘 */
+.title-row {
+  display: flex;
+  align-items: center;
+  gap: 4px; /* 글자와 아이콘 사이 간격 */
+}
+
+.title-text {
+  font-size: 14px;
+  color: #666; /* 연한 회색/검정 */
+  font-weight: 500;
+}
+
+.info-icon {
+  fill: #999; /* 아이콘 색상 (필요시 조정) */
+  cursor: pointer;
+}
+
+/* 오른쪽: 점수 + 꿀통 아이콘 */
+.score-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.score-text {
+  font-size: 18px;
+  font-weight: 700;
+  color: #FFC700; /* 꿀단지 노란색/주황색 */
+}
+
+/* 게이지 트랙 (회색 배경) */
+.progress-track {
+  width: 100%;
+  height: 10px; /* 게이지 두께 */
+  background-color: #EAEAEA; /* 연한 회색 배경 */
+  border-radius: 10px; /* 둥근 모서리 */
+  overflow: hidden; /* 내부 채우기가 튀어나가지 않게 */
+}
+
+/* 게이지 채우기 (노란색) */
+.progress-fill {
+  height: 100%;
+  background-color: #FFEA2B; /* 밝은 노란색 (이미지 참고) */
+  /* 그라데이션을 원하면 아래 코드 사용 */
+  /* background: linear-gradient(90deg, #FFEA2B 0%, #FFC700 100%); */
+  
+  border-radius: 10px;
+  transition: width 0.5s ease-in-out; /* 점수가 변할 때 부드럽게 움직임 */
+}
+
+/* ... 기존 css 코드 아래에 추가 ... */
+
+/* 아이콘 버튼 스타일 (커서 모양 변경) */
+.info-btn {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 4px; /* 터치 영역 확보 */
+}
+
+/* 툴팁 박스 (검은색 말풍선) */
+.tooltip-box {
+  position: absolute;
+  top: 30px; /* 아이콘보다 아래쪽으로 배치 */
+  left: 0;
+  width: 260px; /* 말풍선 너비 (필요시 조절) */
+  background-color: #2D3748; /* 진한 남색/검정 계열 (이미지와 유사) */
+  color: #FFFFFF;
+  font-size: 13px;
+  line-height: 1.5;
+  padding: 12px 16px;
+  border-radius: 8px; /* 둥근 모서리 */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* 그림자 */
+  z-index: 100; /* 다른 요소보다 위에 뜨게 */
+  
+  /* 텍스트 줄바꿈 설정 */
+  word-break: keep-all;
+  text-align: left;
+}
+
+/* 말풍선 위쪽 꼬리 (삼각형) */
+.tooltip-arrow {
+  position: absolute;
+  top: -6px; /* 박스 위로 튀어나오게 */
+  left: 38px; /* info 아이콘 위치 쯤에 맞춤 */
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 6px solid #2D3748; /* 박스 색과 동일하게 */
+}

@@ -1,0 +1,94 @@
+/* src/components/carBasicInfoSection.css */
+
+.car-basic-section {
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 24px;
+}
+
+/* 제목 줄 */
+.car-basic-title-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.car-basic-title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 900;
+  color: #222222;
+}
+
+/* 빨간 별표 */
+.car-basic-required {
+  font-size: 22px;
+  line-height: 1;
+  color: #f2403e;
+}
+
+/* 회색 서브 텍스트 "차량정보" */
+.car-basic-desc {
+  margin: 4px 0 0;
+  font-size: 12px;
+  font-weight: 500;
+  color: #939393;
+}
+
+/* 각 필드 공통 */
+.car-basic-field {
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 16px;
+}
+
+/* 라벨 텍스트 */
+.car-basic-label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #939393;
+}
+
+/* 인풋 박스 (차량번호 354x48 느낌) */
+.car-basic-input-box {
+  width: 100%;
+  height: 48px;
+  box-sizing: border-box;
+  border-radius: 12px;
+  background-color: #f2f4f6;
+  padding: 0 14px;
+
+  display: flex;
+  align-items: center;
+}
+
+/* 실제 입력창 */
+.car-basic-input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+  font-weight: 500;
+  color: #111827;
+}
+
+/* placeholder 색 */
+.car-basic-input::placeholder {
+  color: #c3c3c3;
+}
+
+/* 좌석 수 / 색상 한 줄 */
+.car-basic-row {
+  display: flex;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+/* 반반 레이아웃 */
+.car-basic-field--half {
+  flex: 1;
+  margin-top: 0; /* 위에서 이미 row에 margin을 줌 */
+}

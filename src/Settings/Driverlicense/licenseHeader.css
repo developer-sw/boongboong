@@ -1,0 +1,55 @@
+/* src/components/licenseHeader.css */
+
+/* 상단 운전면허증 등록 헤더 (약 405 x 71 느낌) */
+.license-header {
+  width: 393px;
+  min-height: 55px;             /* 얇지 않게 최소 높이 확보 */
+  box-sizing: border-box;
+
+  /* 위아래 여백 줘서 바가 두툼하게 보이도록 */
+  padding: 18px 20px;
+
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  background-color: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+/* 왼쪽 뒤로가기 버튼 */
+.license-header-back {
+  width: 26px;
+  height: 26px;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* 아이콘 크기 */
+.license-header-back-icon {
+  width: 26px;
+  height: 26px;
+  display: block;
+
+  /* 🔥 아래로 향해 있는 아이콘을 왼쪽으로 90도 회전 */
+  transform: rotate(90deg);
+}
+
+/* 가운데 제목 "운전면허증 등록" */
+.license-header-title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+
+  font-size: 18px;
+  font-weight: 700;
+  color: #111827;
+}

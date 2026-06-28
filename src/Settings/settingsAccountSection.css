@@ -1,0 +1,64 @@
+/* 바깥 여백/위치 (393 폭, 좌우 20px → 카드 353px) */
+.settings-account {
+  width: 393px;
+  box-sizing: border-box;
+  padding: 0 20px;
+  margin-top: 16px;
+}
+
+/* 둥근 흰색 카드 – 인증 및 등록 카드와 동일 느낌 (353 x 근사 값) */
+.settings-account-card {
+  width: 100%;
+  min-height: 120px;
+  box-sizing: border-box;
+
+  background-color: #ffffff;
+  border-radius: 24px;
+  padding: 16px 20px 18px;
+
+  box-shadow: none; /* 그라데이션/그림자 없음 */
+}
+
+/* 상단 라벨 "설정" */
+.settings-account-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #9ca3af;
+  margin-bottom: 10px;
+  padding: 0 10px; /* 내부 행들과 좌우 정렬 맞추기 */
+}
+
+/* 공통 행 버튼 */
+.settings-account-row {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+/* 행 내용 – 좌우 10px 안쪽으로 (divider와 동일) */
+.settings-account-row-inner {
+  padding: 12px 10px;
+  font-size: 14px;
+  font-weight: 550;
+  text-align: left;
+}
+
+/* 로그아웃: 연한 회색 텍스트 (라벨과 톤 맞추기) */
+.settings-account-row-logout {
+  color: #9ca3af;
+}
+
+/* 회원탈퇴: 빨간색 텍스트 */
+.settings-account-row-withdraw {
+  color: #ef4444;
+}
+
+/* 가운데만 보이는 얇은 회색 선 */
+.settings-account-divider {
+  height: 1px;
+  background-color: #e5e7eb;
+  margin: 0 10px; /* 카드 끝까지 가지 않도록 안쪽으로 */
+}

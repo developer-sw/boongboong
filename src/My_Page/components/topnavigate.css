@@ -1,0 +1,76 @@
+/* topnavigate.css */
+
+/* 헤더 전체 컨테이너 */
+.head-section {
+  width: 100%;
+  height: 56px; /* 일반적인 모바일 헤더 높이 */
+  background-color: #ffffff; /* 흰색 배경 */
+  display: flex;
+  justify-content: center;
+  /* 스크롤 시 상단 고정 (필요시 사용) */
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  /* 하단 경계선 (이미지처럼 깔끔하게 하려면 아주 연하게 주거나 제거) */
+  border-bottom: 1px solid #f5f5f5; 
+}
+
+/* 내부 레이아웃 (좌-중-우 배치) */
+.top-header {
+  width: 100%;
+  max-width: 100%; /* 부모 너비 꽉 채움 */
+  padding: 0 16px; /* 좌우 여백 */
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* 아이콘과 제목 사이 공간 배분 */
+}
+
+/* 제목 스타일 */
+.header-title {
+  font-size: 18px; /* 18px ~ 20px 적당 */
+  font-weight: 700; /* 굵은 폰트 */
+  color: #000000;
+  margin: 0;
+  flex: 1; /* 남은 공간을 모두 차지하여 중앙 정렬 유지 */
+  text-align: center; /* 텍스트 가운데 정렬 */
+  
+  /* 제목이 너무 길 경우 ... 처리 */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 버튼 공통 스타일 (초기화 및 터치 영역) */
+.icon-btn {
+  background: none;
+  border: none;
+  padding: 10px; /* 클릭하기 편하게 패딩 추가 */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  /* 레이아웃 균형을 위한 최소 너비 설정 */
+  min-width: 44px; 
+  height: 44px;
+}
+
+/* 뒤로가기 버튼 위치 보정 */
+.icon-btn.back {
+  justify-content: flex-start; /* 왼쪽 정렬 */
+  margin-left: -10px; /* 패딩만큼 당겨서 화면 끝선에 맞춤 */
+}
+
+/* 메뉴(설정) 버튼 위치 보정 */
+.icon-btn.menu {
+  justify-content: flex-end; /* 오른쪽 정렬 */
+  margin-right: -10px; /* 패딩만큼 당겨서 화면 끝선에 맞춤 */
+}
+
+/* 아이콘 크기 제어 (SVG가 반응형이 아닐 경우 대비) */
+.back-icon, 
+.menu-icon {
+  display: block;
+  /* 색상 제어가 필요하다면 아래 주석 해제 */
+  /* fill: #000; */
+}

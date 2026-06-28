@@ -1,0 +1,187 @@
+.detail-container {
+
+  max-width: 400px; /* 전체 너비 제한 */
+
+  margin: 0 auto;
+
+  background-color: #fff;
+
+  min-height: 100vh;
+
+}
+
+
+
+.detail-content {
+
+  /* ✨ 여기가 핵심: 부모에서 너비와 여백을 통합 관리합니다 */
+
+  max-width: 25rem;       /* 400px (전체 폭 제한) */
+
+  margin: 0 auto;         /* 중앙 정렬 */
+
+  padding: 0 1.25rem;     /* 좌우 여백 20px (1.25rem) */
+
+ 
+
+  display: flex;
+
+  flex-direction: column;
+
+  padding-bottom: 4rem; /* 하단 여백 40px */
+
+}
+
+
+
+.bottom-action-bar {
+
+  position: fixed; /* 화면 바닥에 고정 */
+
+  bottom: 0;
+
+  left: 0;
+
+  width: 100%;
+
+  background-color: #fff; /* 배경색 흰색 */
+
+  padding: 1rem;          /* 버튼 주변 여백 */
+
+  box-sizing: border-box; /* 패딩 포함 크기 계산 */
+
+  border-top: 1px solid #f0f0f0; /* 상단 얇은 구분선 */
+
+  z-index: 10;            /* 다른 요소 위에 오도록 */
+
+}
+
+
+
+/* --- 노란색 신청 버튼 --- */
+
+.request-btn {
+
+  width: 100%;            /* 가로 꽉 차게 */
+
+  height: 3.5rem;         /* 버튼 높이 (약 56px) */
+
+  background-color: #FEDF56; /* 카카오톡 스타일 노란색 (원하는 색상코드로 변경 가능) */
+
+  color: #000;            /* 글자색 검정 */
+
+  font-size: 1.1rem;      /* 글자 크기 */
+
+  font-weight: 700;       /* 굵게 */
+
+  border: none;           /* 테두리 없음 */
+
+  border-radius: 0.8rem;  /* 모서리 둥글게 */
+
+  cursor: pointer;
+
+}
+
+
+
+/* 버튼 눌렀을 때 효과 */
+
+.request-btn:active {
+
+  background-color: #FEDF56; /* 조금 어두운 노란색 */
+
+}
+
+
+
+/* 로딩 화면 전체 덮기 & 중앙 정렬 */
+
+.loading-wrapper {
+
+  position: fixed; /* 혹은 absolute */
+
+  top: 0;
+
+  left: 0;
+
+  width: 100%;
+
+  height: 100vh;
+
+  background-color: #ffffff; /* 흰색 배경 */
+
+  display: flex;
+
+  flex-direction: column; /* 세로 정렬 */
+
+  justify-content: center;
+
+  align-items: center;
+
+  z-index: 999; /* 다른 요소보다 위에 뜨게 */
+
+}
+
+
+
+/* 뱅글뱅글 도는 원 */
+
+.spinner {
+
+  width: 40px;
+
+  height: 40px;
+
+  border: 4px solid #f3f3f3; /* 회색 테두리 (배경) */
+
+  border-top: 4px solid #FFC700; /* 붕붕이 노란색 (포인트) */
+
+  border-radius: 50%; /* 원형 만들기 */
+
+  animation: spin 1s linear infinite; /* 1초마다 무한 회전 */
+
+  margin-bottom: 16px; /* 글자와의 간격 */
+
+}
+
+
+
+/* 로딩 멘트 스타일 */
+
+.loading-wrapper p {
+
+  color: #888;
+
+  font-size: 14px;
+
+  font-weight: 500;
+
+  animation: pulse 1.5s ease-in-out infinite; /* 깜빡깜빡 효과 */
+
+}
+
+
+
+/* 회전 애니메이션 정의 */
+
+@keyframes spin {
+
+  0% { transform: rotate(0deg); }
+
+  100% { transform: rotate(360deg); }
+
+}
+
+
+
+/* 깜빡임 애니메이션 정의 */
+
+@keyframes pulse {
+
+  0% { opacity: 0.6; }
+
+  50% { opacity: 1; }
+
+  100% { opacity: 0.6; }
+
+}
