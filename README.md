@@ -267,7 +267,7 @@
 | UI                    | Swiper, React Mobile Picker |
 | Hosting Configuration | Firebase Hosting            |
 
-> Axios 기반 API 연동 및 Firebase Hosting 배포는 제 담당 범위가 아닙니다.
+> ※ Axios 및 Firebase Hosting은 통합 저장소 기준 기술입니다.
 
 ---
 
