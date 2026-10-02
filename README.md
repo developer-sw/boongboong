@@ -14,7 +14,7 @@
 ## Project Overview
 
 - **Project:** 붕붕 (BoongBoong)
-- **Period:** 2025년 2학기
+- **Period:**  2025.09 ~ 2025.12
 - **Type:** 멋쟁이사자처럼 한서대학교 팀 프로젝트
 - **My Role:** Frontend UI Implementation
 - **Main Stack:** `React` `JavaScript` `CSS`
