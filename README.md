@@ -14,7 +14,7 @@
 ## Project Overview
 
 - **Project:** 붕붕 (BoongBoong)
-- **Period:**  2025.09 ~ 2025.12
+- **Period:** 2025.09 ~ 2025.12
 - **Type:** 멋쟁이사자처럼 한서대학교 팀 프로젝트
 - **My Role:** Frontend UI Implementation
 - **Main Stack:** `React` `JavaScript` `CSS`
@@ -24,6 +24,39 @@
 > API 연동, Backend 개발 및 서비스 배포는 제 담당 범위에 포함되지 않습니다.  
 > 현재 `main` 브랜치에는 이후 팀 통합 과정에서 추가된 API 연동 코드가 일부 포함되어 있으며,  
 > 아래 `My Contribution`은 실제 담당했던 UI 구현 범위를 기준으로 작성했습니다.
+
+---
+
+## Screenshots
+
+제가 담당하여 구현한 주요 Frontend UI입니다.
+
+<table>
+  <tr>
+    <td align="center" width="50%">
+      <img src="./docs/images/profile-edit.png" width="230" alt="프로필 수정 화면"/>
+      <br/>
+      <b>프로필 수정</b>
+    </td>
+    <td align="center" width="50%">
+      <img src="./docs/images/settings.png" width="230" alt="설정 화면"/>
+      <br/>
+      <b>설정</b>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="50%">
+      <img src="./docs/images/license-register.png" width="230" alt="운전면허 등록 화면"/>
+      <br/>
+      <b>운전면허 등록</b>
+    </td>
+    <td align="center" width="50%">
+      <img src="./docs/images/car-register.png" width="230" alt="차량정보 등록 화면"/>
+      <br/>
+      <b>차량정보 등록</b>
+    </td>
+  </tr>
+</table>
 
 ---
 
@@ -181,41 +214,6 @@
 
 ---
 
-<!--
-## Screenshots
-
-실제 담당했던 대표 UI입니다.
-
-<table>
-  <tr>
-    <td align="center">
-      <img src="./docs/images/profile-edit.png" width="220"/>
-      <br/>
-      <b>프로필 수정</b>
-    </td>
-    <td align="center">
-      <img src="./docs/images/settings.png" width="220"/>
-      <br/>
-      <b>설정</b>
-    </td>
-  </tr>
-  <tr>
-    <td align="center">
-      <img src="./docs/images/license-register.png" width="220"/>
-      <br/>
-      <b>운전면허 등록</b>
-    </td>
-    <td align="center">
-      <img src="./docs/images/car-register.png" width="220"/>
-      <br/>
-      <b>차량정보 등록</b>
-    </td>
-  </tr>
-</table>
--->
-
----
-
 ## UI Implementation
 
 ### Component Separation
@@ -249,25 +247,25 @@
 
 ### My Contribution
 
-| Category | Technology |
-| --- | --- |
-| Frontend | React |
-| Language | JavaScript |
-| Styling | CSS |
+| Category        | Technology      |
+| --------------- | --------------- |
+| Frontend        | React           |
+| Language        | JavaScript      |
+| Styling         | CSS             |
 | UI Architecture | React Component |
 
 ### Current Integrated Repository
 
 현재 통합된 Frontend 저장소에는 다음 기술이 포함되어 있습니다.
 
-| Category | Technology |
-| --- | --- |
-| Frontend | React 19.1.1 |
-| Routing | React Router DOM |
-| HTTP Client | Axios |
-| Animation | Framer Motion |
-| UI | Swiper, React Mobile Picker |
-| Hosting Configuration | Firebase Hosting |
+| Category              | Technology                  |
+| --------------------- | --------------------------- |
+| Frontend              | React 19.1.1                |
+| Routing               | React Router DOM            |
+| HTTP Client           | Axios                       |
+| Animation             | Framer Motion               |
+| UI                    | Swiper, React Mobile Picker |
+| Hosting Configuration | Firebase Hosting            |
 
 > Axios 기반 API 연동 및 Firebase Hosting 배포는 제 담당 범위가 아닙니다.
 
