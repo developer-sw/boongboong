@@ -235,7 +235,7 @@
 | Frontend | React |
 | Language | JavaScript |
 | Styling | CSS |
-| UI Architecture | React Component |
+| UI Structure | Component-based UI |
 
 ### Current Integrated Repository
 
