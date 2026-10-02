@@ -19,11 +19,11 @@
 - **My Role:** Frontend UI Implementation
 - **Main Stack:** `React` `JavaScript` `CSS`
 
-> 이 프로젝트에서 저는 **프론트엔드 화면 디자인 구현을 담당했습니다.**
+> 이 프로젝트에서 저는 **프론트엔드 화면 디자인 및 UI 구현을 담당했습니다.**
 >
 > API 연동, Backend 개발 및 서비스 배포는 제 담당 범위에 포함되지 않습니다.  
 > 현재 `main` 브랜치에는 이후 팀 통합 과정에서 추가된 API 연동 코드가 일부 포함되어 있으며,  
-> 아래 `My Contribution`은 실제 담당했던 UI 구현 범위를 기준으로 작성했습니다.
+> 아래 기여 내용은 실제 담당했던 UI 구현 범위를 기준으로 작성했습니다.
 
 ---
 
@@ -82,21 +82,18 @@
 프로젝트에서 **모바일 환경을 기준으로 한 화면 UI 구현**을 담당했습니다.
 
 하나의 페이지에 모든 UI를 작성하기보다  
-`Page`, `Header`, `Form Section`, `Action Section` 등 역할에 따라 컴포넌트를 나누어 구현했습니다.
+`Page`, `Header`, `Form Section`, `Action Section` 등 역할에 따라 컴포넌트를 분리하여 구현했습니다.
 
 ### 1. 프로필 수정
 
 사용자가 자신의 프로필 정보를 확인하고 수정할 수 있는 화면을 구현했습니다.
 
-**구현 UI**
+**주요 구현**
 
-- 프로필 수정 전체 레이아웃
-- 상단 헤더 및 뒤로가기
-- 프로필 이미지 영역
-- 닉네임 입력 및 중복확인 버튼
-- 이름 / 나이 입력 영역
-- 나이 선택 Dropdown
-- 하단 수정 완료 버튼
+- 프로필 이미지 및 사용자 정보 입력 UI
+- 닉네임 입력 / 중복확인
+- 이름 / 나이 입력 및 Dropdown
+- 수정 완료 CTA
 
 **Main Components**
 
@@ -114,13 +111,13 @@
 사용자의 서비스 신뢰도를 시각적으로 확인할 수 있는  
 **매너벌 등급 화면 UI**를 담당했습니다.
 
-**구현 UI**
+**주요 구현**
 
 - 매너벌 전체 페이지
-- 상단 헤더
+- 상단 Header
 - 현재 사용자 등급 표시 영역
 
-**담당 Components**
+**Components**
 
 - `BeeGradePage`
 - `BeeGradeHeader`
@@ -134,17 +131,13 @@
 
 ### 3. 설정
 
-사용자 인증 및 계정 관련 화면으로 이동할 수 있는  
-설정 페이지 UI를 구현했습니다.
+사용자 인증 및 계정 관련 기능으로 이동할 수 있는 설정 화면을 구현했습니다.
 
-**구현 UI**
+**주요 구현**
 
-- 설정 전체 레이아웃
-- 상단 설정 헤더
-- 인증 및 등록 카드
-- 운전면허 등록 항목
-- 차량정보 등록 항목
-- 오픈채팅 등록 항목
+- 인증 / 등록 메뉴 UI
+- 운전면허·차량정보 등록 진입 항목
+- 오픈채팅 링크 등록 항목
 - 로그아웃 / 회원탈퇴 영역
 
 **Main Components**
@@ -160,19 +153,14 @@
 
 ### 4. 운전면허 등록
 
-운전자가 서비스 이용에 필요한 운전면허 정보를 입력할 수 있도록  
-등록 화면 UI를 구현했습니다.
+운전자가 서비스 이용에 필요한 운전면허 정보를 입력할 수 있는 화면을 구현했습니다.
 
-**구현 UI**
+**주요 구현**
 
-- 운전면허 등록 전체 페이지
-- 상단 헤더
-- 필수 인증 안내 영역
-- 면허증 번호 / 면허 종류 입력
-- 발급일 / 만료일 입력
+- 필수 인증 안내 UI
+- 면허번호 / 면허종류 / 발급일 / 만료일 입력
 - 이름 / 생년월일 / 주소 입력
-- 주의사항 영역
-- 하단 등록 버튼
+- 주의사항 및 등록 CTA
 
 **Main Components**
 
@@ -188,19 +176,14 @@
 
 ### 5. 차량정보 등록
 
-카풀 운전자가 자신의 차량 정보를 입력할 수 있도록  
-차량 등록 화면 UI를 구현했습니다.
+카풀 운전자가 자신의 차량 정보를 입력할 수 있는 화면을 구현했습니다.
 
-**구현 UI**
+**주요 구현**
 
-- 차량정보 등록 전체 페이지
-- 상단 헤더
 - 차량 사진 등록 영역
 - 차량번호 입력
-- 좌석 수 입력
-- 차량 색상 입력
-- 주의사항 영역
-- 하단 등록 버튼
+- 좌석 수 / 차량 색상 입력
+- 주의사항 및 등록 CTA
 
 **Main Components**
 
@@ -218,28 +201,28 @@
 
 ### Component Separation
 
-화면의 역할에 따라 UI 컴포넌트를 분리했습니다.
+담당 화면을 역할에 따라 작은 UI 컴포넌트로 분리했습니다.
 
     Page
     ├─ Header
     ├─ Information / Form Section
     └─ Submit / Save Section
 
-페이지 레이아웃과 입력 영역, 액션 영역의 역할을 구분하고  
-각 컴포넌트별 스타일을 독립적으로 관리할 수 있도록 구성했습니다.
+페이지 레이아웃, 입력 영역, 액션 영역의 역할을 구분하여  
+각 컴포넌트의 UI와 스타일을 독립적으로 관리할 수 있도록 구성했습니다.
 
 ### Mobile-first Layout
 
 담당 화면은 프로젝트 디자인 기준인 약 `393px` 모바일 화면을 중심으로 구현했습니다.
 
-특히 다음 요소의 일관성을 맞추는 데 중점을 두었습니다.
+다음 요소의 일관성을 유지하는 데 중점을 두었습니다.
 
-- Header 영역 정렬
+- Header 정렬 및 페이지 여백
 - 카드 형태의 정보 영역
-- 입력 Form 간 간격
+- Form 요소 간 간격
 - CTA 버튼 크기 및 위치
 - Border Radius 및 내부 여백
-- 입력 / 인증 / 설정 화면 사이의 디자인 일관성
+- 프로필 / 인증 / 설정 화면 간 UI 일관성
 
 ---
 
@@ -247,56 +230,60 @@
 
 ### My Contribution
 
-| Category        | Technology      |
-| --------------- | --------------- |
-| Frontend        | React           |
-| Language        | JavaScript      |
-| Styling         | CSS             |
+| Category | Technology |
+| --- | --- |
+| Frontend | React |
+| Language | JavaScript |
+| Styling | CSS |
 | UI Architecture | React Component |
 
 ### Current Integrated Repository
 
 현재 통합된 Frontend 저장소에는 다음 기술이 포함되어 있습니다.
 
-| Category              | Technology                  |
-| --------------------- | --------------------------- |
-| Frontend              | React 19.1.1                |
-| Routing               | React Router DOM            |
-| HTTP Client           | Axios                       |
-| Animation             | Framer Motion               |
-| UI                    | Swiper, React Mobile Picker |
-| Hosting Configuration | Firebase Hosting            |
+| Category | Technology |
+| --- | --- |
+| Frontend | React 19.1.1 |
+| Routing | React Router DOM |
+| HTTP Client | Axios |
+| Animation | Framer Motion |
+| UI | Swiper, React Mobile Picker |
+| Hosting | Firebase Hosting |
 
-> ※ Axios 및 Firebase Hosting은 통합 저장소 기준 기술입니다.
+> Axios 및 Firebase Hosting은 팀 통합 저장소 기준 기술입니다.
 
 ---
 
 ## Project Structure
 
-전체 Frontend 프로젝트는 기능 단위로 구성되어 있습니다.
+제가 담당한 주요 Frontend 영역은 다음과 같습니다.
 
     src/
-    ├─ Start_Pages/          # 서비스 시작
-    ├─ Sign_Pages/           # 회원가입
-    ├─ Main_Pages/           # 메인
-    ├─ Search_Pages/         # 카풀 검색
-    ├─ Write_pages/          # 카풀 게시글 작성
-    ├─ CardDetail/           # 카풀 상세
-    ├─ My_Carpool/           # 내 카풀
-    ├─ My_Page/              # 마이페이지
+    ├─ Useredit/                 # 프로필 수정
+    │  ├─ ProfileEditPage
+    │  ├─ ProfileEditHeader
+    │  ├─ ProfileEditForm
+    │  └─ ProfileEditSaveBar
     │
-    ├─ Useredit/             # 담당: 프로필 수정
-    │
-    ├─ Settings/             # 담당: 설정
-    │  ├─ Driverlicense/     # 담당: 운전면허 등록
-    │  └─ Carinfo/           # 담당: 차량정보 등록
-    │
-    ├─ Review/
-    ├─ Kakao/
-    ├─ components/
-    ├─ layout/
-    ├─ api/
-    └─ assets/
+    └─ Settings/                 # 설정
+       ├─ SettingsPage
+       ├─ SettingsHeader
+       ├─ MyVerificationSection
+       ├─ SettingsAccountSection
+       │
+       ├─ Driverlicense/         # 운전면허 등록
+       │  ├─ LicenseRegisterPage
+       │  ├─ LicenseHeader
+       │  ├─ LicenseInfoSection
+       │  ├─ LicensePersonalSection
+       │  └─ LicenseSubmitSection
+       │
+       └─ Carinfo/               # 차량정보 등록
+          ├─ CarRegisterPage
+          ├─ CarHeader
+          ├─ CarPhotoSection
+          ├─ CarBasicInfoSection
+          └─ CarSubmitSection
 
 ---
 
@@ -304,8 +291,8 @@
 
 Frontend와 함께 사용된 Backend는 별도의 **Java / Spring Boot 프로젝트**로 개발되었습니다.
 
-회원 인증, 카풀 게시글, 검색·매칭, 마이페이지, 운전면허·차량정보,  
-리뷰 및 사용자 신뢰점수 등의 기능을 Backend에서 처리합니다.
+Backend에서는 회원 인증, 카풀 게시글, 검색·매칭, 마이페이지,  
+운전면허·차량정보, 리뷰 및 사용자 신뢰점수 등의 기능을 처리합니다.
 
 **Backend Repository:**  
 [jaemin-devlog/BoongBoong](https://github.com/jaemin-devlog/BoongBoong)
@@ -332,6 +319,8 @@ Frontend와 함께 사용된 Backend는 별도의 **Java / Spring Boot 프로젝
 
     REACT_APP_API_URL=<BACKEND_API_URL>
 
+일부 기능은 별도의 Backend 서버와 API 환경변수 설정이 필요합니다.
+
 ### Run
 
     npm start
@@ -347,16 +336,16 @@ Frontend와 함께 사용된 Backend는 별도의 **Java / Spring Boot 프로젝
 ## What I Learned
 
 이 프로젝트를 통해 React 기반 팀 프로젝트에서  
-모바일 화면을 여러 UI 컴포넌트로 분리하여 구현하는 경험을 했습니다.
+모바일 화면을 역할에 따라 여러 UI 컴포넌트로 분리하여 구현하는 경험을 했습니다.
 
 특히 다음과 같은 Frontend 개발 경험을 쌓았습니다.
 
 - 페이지 단위 UI 구조 설계
 - 역할에 따른 React 컴포넌트 분리
-- 입력 Form 중심 모바일 UI 구현
-- CSS를 활용한 모바일 레이아웃 구성
-- 공통 디자인 규칙을 적용한 화면 간 UI 일관성 유지
-- 팀 프로젝트 내 Frontend 역할 분담 및 협업
+- Form 중심 모바일 UI 구현
+- CSS 기반 모바일 레이아웃 구성
+- 화면 간 공통 디자인 규칙 적용
+- 팀 프로젝트 내 역할 분담 및 협업
 
 이 프로젝트는 **Frontend 개발자로 참여했던 프로젝트**이며,  
 이후 Java / Spring Boot 기반 Backend 개발을 중심으로 역량을 확장하고 있습니다.
