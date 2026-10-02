@@ -16,7 +16,7 @@
 - **Project:** 붕붕 (BoongBoong)
 - **Period:** 2025.09 ~ 2025.12
 - **Type:** 멋쟁이사자처럼 한서대학교 팀 프로젝트
-- **My Role:** Frontend UI Implementation
+- **My Role:** Frontend Developer — UI Implementation
 - **Main Stack:** `React` `JavaScript` `CSS`
 
 > 이 프로젝트에서 저는 **프론트엔드 화면 디자인 및 UI 구현을 담당했습니다.**
